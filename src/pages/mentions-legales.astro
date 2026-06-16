@@ -1,0 +1,82 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { company, contact, agencies, siteUrl } from "@/config/site";
+
+const locale = "fr";
+const title = `Mentions légales — ${company.name}`;
+const description = "Mentions légales du site Accueil Formalités : éditeur, hébergeur, propriété intellectuelle et responsabilité.";
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <section class="bg-secondary py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent mb-3">Informations légales</p>
+      <h1 class="font-serif text-3xl sm:text-4xl text-primary leading-tight">Mentions légales</h1>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 prose prose-slate max-w-none">
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">1. Éditeur du site</h2>
+      <p>
+        Le présent site <strong>{siteUrl}</strong> est édité par :
+      </p>
+      <ul class="text-gray-700 space-y-1">
+        <li><strong>Raison sociale :</strong> {company.name}</li>
+        <li><strong>Adresse :</strong> {agencies[0].address}</li>
+        <li><strong>Téléphone :</strong> {contact.phoneDisplay}</li>
+        <li><strong>E-mail :</strong> {contact.email}</li>
+      </ul>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">2. Directeur de la publication</h2>
+      <p>Le directeur de la publication est le représentant légal d'{company.name}.</p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">3. Hébergement</h2>
+      <p>
+        L'hébergeur du site est à renseigner avant la mise en production (ex. OVH, Vercel, Netlify…).
+        Ses coordonnées seront ajoutées ici conformément à l'article 6-I-2° de la loi n° 2004-575 du
+        21 juin 2004 pour la confiance dans l'économie numérique (LCEN).
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">4. Propriété intellectuelle</h2>
+      <p>
+        L'ensemble du contenu de ce site (textes, images, logo, graphismes) est la propriété exclusive
+        d'{company.name} ou de ses partenaires et est protégé par les lois françaises et
+        internationales relatives à la propriété intellectuelle.
+      </p>
+      <p>
+        Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie
+        des éléments du site est interdite sans l'autorisation écrite préalable d'{company.name}.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">5. Responsabilité</h2>
+      <p>
+        Les informations publiées sur ce site ont un caractère purement indicatif. {company.name}
+        s'efforce de maintenir ces informations à jour mais ne saurait être tenu responsable des
+        erreurs, omissions ou des résultats qui pourraient être obtenus par un mauvais usage de ces
+        informations.
+      </p>
+      <p>
+        {company.name} ne saurait être tenu responsable des dommages directs ou indirects causés
+        au matériel de l'utilisateur lors de l'accès au site, résultant de l'utilisation d'un
+        matériel non conforme aux spécifications ou de l'apparition d'un bug ou d'une incompatibilité.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">6. Liens hypertextes</h2>
+      <p>
+        Le site peut contenir des liens vers des sites tiers. {company.name} n'exerce aucun contrôle
+        sur ces sites et décline toute responsabilité quant à leur contenu ou leurs pratiques en
+        matière de données personnelles.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">7. Droit applicable</h2>
+      <p>
+        Les présentes mentions légales sont soumises au droit français. En cas de litige, les
+        tribunaux français seront seuls compétents.
+      </p>
+
+      <p class="text-sm text-gray-500 mt-12">Dernière mise à jour : juin 2026.</p>
+    </div>
+  </section>
+</BaseLayout>

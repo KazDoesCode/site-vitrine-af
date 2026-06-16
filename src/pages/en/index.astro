@@ -1,0 +1,121 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { company, images, services, values, stats } from "@/config/site";
+import { t } from "@/config/i18n";
+
+const locale = "en";
+const tr = t(locale);
+---
+
+<BaseLayout
+  title={`${company.name} — Administrative support for foreigners in France`}
+  description="Accueil Formalités, specialist firm in administrative support: residence permit, naturalisation, work authorisation, family reunification. Paris 10th."
+  locale={locale}
+>
+  <section class="bg-secondary overflow-hidden">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center py-20 lg:py-28">
+      <div class="animate-fade-in-up">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent mb-5">{tr.hero.eyebrow}</p>
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-primary leading-tight">{tr.hero.slogan}</h1>
+        <p class="mt-5 text-lg text-gray-600 leading-relaxed max-w-xl">{tr.hero.description}</p>
+        <div class="mt-9 flex flex-wrap gap-4">
+          <a href="/en/contact" class="btn-primary">{tr.hero.ctaPrimary}</a>
+          <a href="/en/services" class="btn-secondary">{tr.hero.ctaSecondary}</a>
+        </div>
+        <dl class="mt-12 grid grid-cols-3 gap-6 max-w-md border-t border-gray-200 pt-6">
+          {stats.map(({ value }, i) => (
+            <div>
+              <dt class="text-xs uppercase tracking-wider text-gray-500">{[tr.stats.experience, tr.stats.cases, tr.stats.satisfaction][i]}</dt>
+              <dd class="font-serif text-2xl sm:text-3xl text-primary mt-1">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-4 bg-primary/5 rounded-2xl -z-10"></div>
+        <img src={images.hero} alt="Administrative procedures in France" class="w-full h-[480px] object-cover rounded-xl shadow-2xl" width="1600" height="900" />
+        <div class="absolute -bottom-1 left-0 right-0 tricolor-bar rounded-b-xl"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <div class="absolute -inset-3 bg-secondary rounded-2xl -z-10"></div>
+        <img src={images.about} alt="Administrative consultation" class="w-full h-[420px] object-cover rounded-xl shadow-lg" loading="lazy" width="1200" height="800" />
+      </div>
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent mb-3">{tr.about.eyebrow}</p>
+        <h2 class="font-serif text-3xl sm:text-4xl text-primary leading-tight">{tr.about.title}</h2>
+        <p class="mt-5 text-base text-gray-600 leading-relaxed">{tr.about.description}</p>
+        <a href="/en/a-propos" class="group inline-flex items-center gap-2 mt-7 text-primary font-semibold hover:text-accent transition-colors">
+          {tr.about.link}
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-secondary">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent mb-3">{tr.services.eyebrow}</p>
+        <h2 class="font-serif text-3xl sm:text-4xl text-primary leading-tight">{tr.services.title}</h2>
+        <p class="mt-4 text-base text-gray-600 leading-relaxed">{tr.services.description}</p>
+      </div>
+      <div class="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map((s) => (
+          <article class="card-service">
+            <div class="overflow-hidden">
+              <img src={s.image} alt={s.title} class="h-48 w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" width="1000" height="700" />
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-serif text-xl text-primary">{s.title}</h3>
+              <p class="mt-3 text-sm text-gray-600 leading-relaxed flex-1">{s.summary}</p>
+              <a href={`/en/services#${s.slug}`} class="group inline-flex items-center gap-1.5 mt-5 text-sm font-semibold text-accent hover:text-accent-dark transition-colors">
+                {tr.services.learnMore}
+                <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-150" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent mb-3">{tr.values.eyebrow}</p>
+        <h2 class="font-serif text-3xl sm:text-4xl text-primary leading-tight">{tr.values.title}</h2>
+      </div>
+      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {values.map((v) => (
+          <div class="group bg-white border border-gray-100 rounded-xl p-7 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300">
+            <div class="w-10 h-1 bg-accent rounded-full mb-5 group-hover:w-14 transition-all duration-300"></div>
+            <h3 class="font-serif text-xl text-primary">{v.title}</h3>
+            <p class="mt-3 text-sm text-gray-600 leading-relaxed">{v.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);"></div>
+    <div class="relative mx-auto max-w-5xl px-4 sm:px-6 py-20 text-center">
+      <h2 class="font-serif text-3xl sm:text-4xl">{tr.cta.title}</h2>
+      <p class="mt-4 text-white/80 max-w-2xl mx-auto leading-relaxed">{tr.cta.description}</p>
+      <a href="/en/contact" class="mt-10 inline-flex items-center justify-center rounded-md bg-accent px-8 py-4 text-sm font-semibold text-white shadow-lg hover:bg-accent-dark hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">{tr.cta.button}</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-up { animation: fadeInUp 0.6s ease-out both; }
+</style>

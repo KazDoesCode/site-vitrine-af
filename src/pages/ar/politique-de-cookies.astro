@@ -1,0 +1,107 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { company, contact, siteUrl } from "@/config/site";
+
+const locale = "ar";
+const title = `سياسة ملفات تعريف الارتباط — ${company.name}`;
+const description = "سياسة ملفات تعريف الارتباط لموقع Accueil Formalités: أنواع الملفات المستخدمة وأغراضها وكيفية إدارتها.";
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <section class="bg-secondary py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent mb-3">الشفافية الرقمية</p>
+      <h1 class="font-serif text-3xl sm:text-4xl text-primary leading-tight">سياسة ملفات تعريف الارتباط</h1>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 prose prose-slate max-w-none">
+
+      <p class="text-gray-700 leading-relaxed">
+        توضح هذه السياسة ما هي ملفات تعريف الارتباط (Cookies)، وأيها يُستخدم على
+        <strong>{siteUrl}</strong>، وكيف يمكنكم التحكم فيها، وذلك وفقاً للقانون الفرنسي
+        والأوروبي لحماية البيانات (اللائحة RGPD والمادة 82 من قانون المعلوماتية والحريات).
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">١. ما هو ملف تعريف الارتباط؟</h2>
+      <p>
+        ملف تعريف الارتباط هو ملف نصي صغير يُودَع على جهازكم (حاسوب، هاتف ذكي، جهاز لوحي)
+        عند زيارة موقع إلكتروني. يتيح للموقع تذكّر معلومات معينة عن تصفّحكم لتحسين تجربتكم
+        أو لأغراض إحصائية أو إعلانية.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٢. ملفات تعريف الارتباط المستخدمة في هذا الموقع</h2>
+
+      <h3 class="font-serif text-xl text-primary mt-7 mb-3">٢.١ ملفات ضرورية تقنياً</h3>
+      <p>
+        هذه الملفات ضرورية للتشغيل التقني للموقع. لا تجمع أي بيانات شخصية ولا تستلزم موافقتكم.
+      </p>
+      <table class="w-full text-sm border-collapse mt-3">
+        <thead>
+          <tr class="bg-secondary text-primary">
+            <th class="text-right p-3 border border-gray-200">الاسم</th>
+            <th class="text-right p-3 border border-gray-200">الغرض</th>
+            <th class="text-right p-3 border border-gray-200">المدة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border border-gray-200"><code>__session</code></td>
+            <td class="p-3 border border-gray-200">الحفاظ على جلسة التصفح</td>
+            <td class="p-3 border border-gray-200">الجلسة</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="font-serif text-xl text-primary mt-7 mb-3">٢.٢ ملفات تحليلية (غير مستخدمة)</h3>
+      <p>
+        لا يستخدم هذا الموقع <strong>أي</strong> ملفات تحليلية أو لقياس الزيارات
+        (Google Analytics، Matomo…). إن أُضيفت مستقبلاً، ستُطلب موافقتكم الصريحة وستُحدَّث هذه السياسة.
+      </p>
+
+      <h3 class="font-serif text-xl text-primary mt-7 mb-3">٢.٣ ملفات إعلانية (غير مستخدمة)</h3>
+      <p>
+        لا يستخدم هذا الموقع <strong>أي</strong> ملفات إعلانية أو أدوات تتبع لشبكات التواصل
+        الاجتماعي (Meta Pixel، Google Ads…).
+      </p>
+
+      <h3 class="font-serif text-xl text-primary mt-7 mb-3">٢.٤ ملفات تعريف طرف ثالث (خرائط)</h3>
+      <p>
+        تتضمن صفحة /contact خريطة Google Maps عبر إطار iframe. قد تودع Google ملفاتها
+        الخاصة عند تحميل الخريطة، وهي خاضعة لـ
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-accent underline">سياسة خصوصية Google</a>.
+        تُحمَّل الخريطة فقط في صفحة /contact.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٣. إدارة ملفات تعريف الارتباط</h2>
+      <p>يمكنكم التحكم في ملفات تعريف الارتباط أو حذفها في أي وقت:</p>
+      <ul class="text-gray-700 space-y-2">
+        <li><strong>عبر المتصفح</strong>: يتيح كل متصفح رفض الملفات أو حذفها من الإعدادات.</li>
+        <li><strong>Chrome</strong>: الإعدادات ← الخصوصية والأمان ← ملفات تعريف الارتباط</li>
+        <li><strong>Firefox</strong>: الخيارات ← الخصوصية والأمان ← ملفات تعريف الارتباط</li>
+        <li><strong>Safari</strong>: التفضيلات ← الخصوصية ← ملفات تعريف الارتباط</li>
+        <li><strong>Edge</strong>: الإعدادات ← الخصوصية ← ملفات تعريف الارتباط</li>
+      </ul>
+      <p class="mt-4">
+        قد يؤثر تعطيل بعض الملفات على تجربة التصفح في هذا الموقع أو مواقع أخرى
+        (لا سيما خريطة Google Maps).
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٤. الموافقة</h2>
+      <p>
+        نظراً لعدم استخدام هذا الموقع ملفات تستلزم موافقتكم (باستثناء ملفات Google Maps
+        للطرف الثالث)، لا تظهر أي لافتة موافقة. إن تمّ تثبيت ملفات تستلزم موافقة مستقبلاً،
+        ستُعرض لافتة موافقة وفق توصيات CNIL قبل أي إيداع.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٥. التواصل</h2>
+      <p>
+        لأي سؤال حول استخدامنا لملفات تعريف الارتباط، تواصلوا معنا على
+        <a href={`mailto:${contact.email}`} class="text-accent underline">{contact.email}</a>.
+      </p>
+
+      <p class="text-sm text-gray-500 mt-12">آخر تحديث: يونيو 2026.</p>
+    </div>
+  </section>
+</BaseLayout>

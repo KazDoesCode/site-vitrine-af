@@ -1,0 +1,71 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { company, contact, agencies, siteUrl } from "@/config/site";
+
+const locale = "ar";
+const title = `الإشعارات القانونية — ${company.name}`;
+const description = "الإشعارات القانونية لموقع Accueil Formalités: الناشر، الاستضافة، الملكية الفكرية والمسؤولية.";
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <section class="bg-secondary py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent mb-3">معلومات قانونية</p>
+      <h1 class="font-serif text-3xl sm:text-4xl text-primary leading-tight">الإشعارات القانونية</h1>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 prose prose-slate max-w-none">
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">١. ناشر الموقع</h2>
+      <p>يُنشر الموقع الإلكتروني <strong>{siteUrl}</strong> من قِبَل:</p>
+      <ul class="text-gray-700 space-y-1">
+        <li><strong>الاسم التجاري:</strong> {company.name}</li>
+        <li><strong>العنوان:</strong> {agencies[0].address}</li>
+        <li><strong>الهاتف:</strong> {contact.phoneDisplay}</li>
+        <li><strong>البريد الإلكتروني:</strong> {contact.email}</li>
+      </ul>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٢. مدير النشر</h2>
+      <p>مدير النشر هو الممثل القانوني لـ {company.name}.</p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٣. الاستضافة</h2>
+      <p>
+        ستُضاف بيانات مزوّد الاستضافة قبل الإطلاق الرسمي (مثلاً: OVH، Vercel، Netlify…)،
+        وذلك وفقاً للقانون الفرنسي رقم 2004-575 المؤرخ في 21 يونيو 2004.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٤. الملكية الفكرية</h2>
+      <p>
+        جميع محتويات هذا الموقع (نصوص، صور، شعار، رسومات) هي ملك حصري لـ {company.name}
+        أو شركائها، وهي محمية بموجب قوانين الملكية الفكرية الفرنسية والدولية.
+      </p>
+      <p>
+        يُحظر أي نسخ أو تمثيل أو تعديل أو نشر أو تكييف لأي عنصر من عناصر الموقع دون الحصول
+        على إذن كتابي مسبق من {company.name}.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٥. المسؤولية</h2>
+      <p>
+        المعلومات المنشورة على هذا الموقع ذات طابع إعلامي فحسب. تبذل {company.name} قصارى
+        جهدها للحفاظ على تحديث هذه المعلومات، غير أنها لا تتحمل أي مسؤولية عن الأخطاء
+        أو الإغفالات أو النتائج الناجمة عن إساءة استخدامها.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٦. الروابط الإلكترونية</h2>
+      <p>
+        قد يحتوي الموقع على روابط لمواقع تابعة لجهات خارجية. لا تتحكم {company.name} في هذه
+        المواقع وتخلي مسؤوليتها عن محتواها وممارساتها المتعلقة بالبيانات الشخصية.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٧. القانون المطبّق</h2>
+      <p>
+        تخضع هذه الإشعارات القانونية للقانون الفرنسي. في حال النزاع، تكون المحاكم الفرنسية
+        هي المختصة حصراً.
+      </p>
+
+      <p class="text-sm text-gray-500 mt-12">آخر تحديث: يونيو 2026.</p>
+    </div>
+  </section>
+</BaseLayout>

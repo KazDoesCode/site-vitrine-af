@@ -1,0 +1,111 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { company, contact, siteUrl } from "@/config/site";
+
+const locale = "fr";
+const title = `Politique de cookies — ${company.name}`;
+const description = "Politique de cookies du site Accueil Formalités : types de cookies utilisés, finalités et comment les gérer.";
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <section class="bg-secondary py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent mb-3">Transparence numérique</p>
+      <h1 class="font-serif text-3xl sm:text-4xl text-primary leading-tight">Politique de cookies</h1>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 prose prose-slate max-w-none">
+
+      <p class="text-gray-700 leading-relaxed">
+        La présente politique explique ce que sont les cookies, lesquels sont utilisés sur
+        <strong>{siteUrl}</strong> et comment vous pouvez les contrôler, conformément à l'article 82
+        de la loi Informatique et Libertés et aux lignes directrices de la CNIL.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">1. Qu'est-ce qu'un cookie ?</h2>
+      <p>
+        Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, smartphone,
+        tablette) lors de la visite d'un site web. Il permet au site de mémoriser certaines
+        informations sur votre navigation pour améliorer votre expérience ou à des fins
+        statistiques ou publicitaires.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">2. Cookies utilisés sur ce site</h2>
+
+      <h3 class="font-serif text-xl text-primary mt-7 mb-3">2.1 Cookies strictement nécessaires</h3>
+      <p>
+        Ces cookies sont indispensables au fonctionnement technique du site. Ils ne collectent
+        aucune donnée personnelle et ne nécessitent pas votre consentement.
+      </p>
+      <table class="w-full text-sm border-collapse mt-3">
+        <thead>
+          <tr class="bg-secondary text-primary">
+            <th class="text-left p-3 border border-gray-200">Nom</th>
+            <th class="text-left p-3 border border-gray-200">Finalité</th>
+            <th class="text-left p-3 border border-gray-200">Durée</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border border-gray-200"><code>__session</code></td>
+            <td class="p-3 border border-gray-200">Maintien de la session de navigation</td>
+            <td class="p-3 border border-gray-200">Session</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="font-serif text-xl text-primary mt-7 mb-3">2.2 Cookies analytiques (non utilisés)</h3>
+      <p>
+        Ce site <strong>n'utilise pas</strong> de cookies analytiques ou de statistiques de visites
+        (Google Analytics, Matomo, etc.). Si nous en installions à l'avenir, votre consentement
+        explicite serait requis et cette politique serait mise à jour.
+      </p>
+
+      <h3 class="font-serif text-xl text-primary mt-7 mb-3">2.3 Cookies publicitaires (non utilisés)</h3>
+      <p>
+        Ce site <strong>n'utilise pas</strong> de cookies publicitaires ni de traceurs de
+        réseaux sociaux (Meta Pixel, Google Ads, etc.).
+      </p>
+
+      <h3 class="font-serif text-xl text-primary mt-7 mb-3">2.4 Cookies tiers (cartographie)</h3>
+      <p>
+        La page /contact intègre une carte Google Maps via un iframe. Google peut déposer
+        ses propres cookies lors du chargement de la carte. Ces cookies sont soumis à la
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-accent underline">politique de confidentialité de Google</a>.
+        La carte se charge uniquement sur la page /contact.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">3. Gérer vos cookies</h2>
+      <p>Vous pouvez contrôler ou supprimer les cookies à tout moment :</p>
+      <ul class="text-gray-700 space-y-2">
+        <li><strong>Via votre navigateur</strong> : chaque navigateur permet de refuser ou supprimer les cookies dans ses paramètres.</li>
+        <li><strong>Chrome</strong> : Paramètres → Confidentialité et sécurité → Cookies</li>
+        <li><strong>Firefox</strong> : Options → Vie privée et sécurité → Cookies</li>
+        <li><strong>Safari</strong> : Préférences → Confidentialité → Cookies</li>
+        <li><strong>Edge</strong> : Paramètres → Confidentialité et sécurité → Cookies</li>
+      </ul>
+      <p class="mt-4">
+        La désactivation de certains cookies peut affecter la navigation sur ce site ou des
+        sites tiers (notamment la carte Google Maps).
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">4. Consentement</h2>
+      <p>
+        Ce site n'utilisant pas de cookies nécessitant un consentement (hors cookies tiers
+        Google Maps), aucune bannière de consentement n'est affichée. Si des cookies
+        soumis à consentement venaient à être installés, une bannière conforme aux recommandations
+        de la CNIL serait mise en place avant tout dépôt.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">5. Contact</h2>
+      <p>
+        Pour toute question relative à notre utilisation des cookies, contactez-nous à
+        <a href={`mailto:${contact.email}`} class="text-accent underline">{contact.email}</a>.
+      </p>
+
+      <p class="text-sm text-gray-500 mt-12">Dernière mise à jour : juin 2026.</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,56 @@
+---
+import { company, contact, agencies, localeLabels } from "@/config/site";
+import type { Locale } from "@/config/site";
+import { t, localePath } from "@/config/i18n";
+
+interface Props {
+  locale?: Locale;
+}
+const { locale = "fr" } = Astro.props;
+const tr = t(locale);
+---
+
+<footer role="contentinfo" class="bg-primary text-white mt-24">
+  <div class="tricolor-bar"></div>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 grid gap-10 md:grid-cols-4">
+
+    <div class="md:col-span-2">
+      <h3 class="font-serif text-2xl">{company.name}</h3>
+      <p class="text-accent font-medium mt-1">{company.tagline}</p>
+      <p class="mt-3 text-sm text-white/80 max-w-md leading-relaxed italic">"{company.slogan}"</p>
+    </div>
+
+    <div>
+      <h4 class="font-serif text-lg mb-3">{tr.footer.nav}</h4>
+      <ul role="list" aria-label="Liens du site" class="space-y-2 text-sm text-white/80">
+        <li><a href={localePath(locale, "/")} class="hover:text-white">{tr.nav.home}</a></li>
+        <li><a href={localePath(locale, "/services")} class="hover:text-white">{tr.nav.services}</a></li>
+        <li><a href={localePath(locale, "/a-propos")} class="hover:text-white">{tr.nav.about}</a></li>
+        <li><a href={localePath(locale, "/contact")} class="hover:text-white">{tr.nav.contact}</a></li>
+        <li><a href={localePath(locale, "/mentions-legales")} class="hover:text-white">{tr.footer.legal}</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-serif text-lg mb-3">{tr.footer.contact}</h4>
+      <ul class="space-y-2 text-sm text-white/80">
+        <li><a href={`tel:${contact.phone}`} class="hover:text-white">{contact.phoneDisplay}</a></li>
+        <li><a href={`mailto:${contact.email}`} class="hover:text-white">{contact.email}</a></li>
+        {agencies.map((a) => (
+          <li>{a.city} — {a.address}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-5 text-xs text-white/60 flex flex-col sm:flex-row gap-2 justify-between">
+      <p>© {new Date().getFullYear()} {company.name}. {tr.footer.rights}</p>
+      <div class="flex flex-wrap gap-4">
+        <a href={localePath(locale, "/mentions-legales")} class="hover:text-white/90">{tr.footer.legal}</a>
+        <a href={localePath(locale, "/politique-de-confidentialite")} class="hover:text-white/90">{tr.footer.privacy}</a>
+        <a href={localePath(locale, "/politique-de-cookies")} class="hover:text-white/90">{tr.footer.cookies}</a>
+      </div>
+    </div>
+  </div>
+</footer>

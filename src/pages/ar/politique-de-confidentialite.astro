@@ -1,0 +1,130 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { company, contact, agencies, siteUrl } from "@/config/site";
+
+const locale = "ar";
+const title = `سياسة الخصوصية — ${company.name}`;
+const description = "سياسة الخصوصية والامتثال للائحة RGPD لموقع Accueil Formalités: كيفية جمع بياناتكم الشخصية ومعالجتها وحمايتها.";
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <section class="bg-secondary py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent mb-3">حماية البيانات</p>
+      <h1 class="font-serif text-3xl sm:text-4xl text-primary leading-tight">سياسة الخصوصية</h1>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 prose prose-slate max-w-none">
+
+      <p class="text-gray-700 leading-relaxed">
+        تلتزم {company.name} بحماية خصوصية وأمن البيانات الشخصية لزوارها وعملائها، وفقاً للائحة
+        العامة لحماية البيانات (RGPD — اللائحة الأوروبية 2016/679) والقانون الفرنسي المتعلق
+        بمعالجة البيانات والحريات.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">١. المسؤول عن معالجة البيانات</h2>
+      <ul class="text-gray-700 space-y-1">
+        <li><strong>الاسم التجاري:</strong> {company.name}</li>
+        <li><strong>العنوان:</strong> {agencies[0].address}</li>
+        <li><strong>البريد الإلكتروني:</strong> {contact.email}</li>
+        <li><strong>الهاتف:</strong> {contact.phoneDisplay}</li>
+      </ul>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٢. البيانات المُجمَّعة</h2>
+      <p>نجمع فقط البيانات التي تُقدّمونها لنا طوعاً:</p>
+      <ul class="text-gray-700 space-y-1">
+        <li>الاسم الكامل</li>
+        <li>عنوان البريد الإلكتروني</li>
+        <li>رقم الهاتف (اختياري)</li>
+        <li>موضوع رسالتكم ومحتواها</li>
+      </ul>
+      <p>
+        لا يتم جمع أي بيانات حساسة (بمفهوم المادة 9 من اللائحة RGPD) عبر نموذج الاتصال.
+        لا تُجمع المعلومات المتعلقة بوضعكم الإداري إلا في إطار التزام تعاقدي.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٣. الأغراض والأساس القانوني</h2>
+      <table class="w-full text-sm border-collapse mt-2">
+        <thead>
+          <tr class="bg-secondary text-primary">
+            <th class="text-right p-3 border border-gray-200">الغرض</th>
+            <th class="text-right p-3 border border-gray-200">الأساس القانوني</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border border-gray-200">الرد على طلبات التواصل</td>
+            <td class="p-3 border border-gray-200">المصلحة المشروعة / تنفيذ عقد</td>
+          </tr>
+          <tr class="bg-gray-50">
+            <td class="p-3 border border-gray-200">إدارة العلاقة مع العميل</td>
+            <td class="p-3 border border-gray-200">تنفيذ عقد</td>
+          </tr>
+          <tr>
+            <td class="p-3 border border-gray-200">الامتثال للالتزامات القانونية</td>
+            <td class="p-3 border border-gray-200">التزام قانوني</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٤. مدد الاحتفاظ بالبيانات</h2>
+      <ul class="text-gray-700 space-y-1">
+        <li><strong>طلبات التواصل:</strong> 3 سنوات من تاريخ آخر تبادل.</li>
+        <li><strong>ملفات العملاء:</strong> 5 سنوات بعد انتهاء المهمة (التزامات محاسبية وقانونية).</li>
+        <li><strong>بيانات الاتصال:</strong> 12 شهراً (سجلات الخادم).</li>
+      </ul>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٥. مستلمو البيانات</h2>
+      <p>
+        تكون بياناتكم متاحة حصراً للموظفين المُخوَّلين في {company.name}. لا تُباع ولا
+        تُنقل إلى أطراف ثالثة لأغراض تجارية. يجوز مشاركتها مع مزودي الخدمات التقنية
+        (الاستضافة، البريد الإلكتروني) فقط لتنفيذ مهامهم وبموجب اتفاقيات سرية.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٦. التحويلات خارج الاتحاد الأوروبي</h2>
+      <p>
+        تُستضاف بياناتكم داخل الاتحاد الأوروبي. في حال أي تحويل خارجه، نضمن وجود ضمانات
+        مناسبة (البنود التعاقدية النموذجية للمفوضية الأوروبية).
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٧. حقوقكم</h2>
+      <p>وفقاً للائحة RGPD، تتمتعون بالحقوق التالية:</p>
+      <ul class="text-gray-700 space-y-1">
+        <li><strong>حق الوصول</strong> — الحصول على نسخة من بياناتكم.</li>
+        <li><strong>حق التصحيح</strong> — تصحيح بيانات غير دقيقة أو ناقصة.</li>
+        <li><strong>حق المحو</strong> — طلب حذف بياناتكم (مع مراعاة الالتزامات القانونية).</li>
+        <li><strong>حق التقييد</strong> — تقييد المعالجة في حالات معينة.</li>
+        <li><strong>حق قابلية النقل</strong> — استلام بياناتكم بتنسيق منظّم.</li>
+        <li><strong>حق الاعتراض</strong> — الاعتراض على المعالجة القائمة على المصلحة المشروعة.</li>
+      </ul>
+      <p>
+        لممارسة هذه الحقوق، تواصلوا معنا على <a href={`mailto:${contact.email}`} class="text-accent underline">{contact.email}</a>.
+        يحق لكم أيضاً تقديم شكوى إلى
+        <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-accent underline">CNIL</a>
+        (لجنة الإعلاميات والحريات الفرنسية).
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٨. ملفات تعريف الارتباط (Cookies)</h2>
+      <p>
+        لا يستخدم هذا الموقع ملفات تعريف ارتباط إعلانية ولا أدوات تتبع تابعة لجهات خارجية.
+        أي ملفات تقنية ضرورية قد تُودَع تُعدّ ضرورية لعمل الموقع ولا تستلزم موافقتكم.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">٩. الأمن</h2>
+      <p>
+        نطبّق تدابير تقنية وتنظيمية مناسبة لحماية بياناتكم من الوصول غير المصرّح به أو
+        الفقدان أو الإفصاح: اتصال HTTPS، وصول مقيّد إلى البيانات، وإجراءات داخلية للسرية.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">١٠. التعديلات</h2>
+      <p>
+        نحتفظ بالحق في تعديل هذه السياسة في أي وقت. يُشار إلى تاريخ آخر تحديث أدناه.
+        نشجّعكم على الاطلاع عليها بانتظام.
+      </p>
+
+      <p class="text-sm text-gray-500 mt-12">آخر تحديث: يونيو 2026.</p>
+    </div>
+  </section>
+</BaseLayout>

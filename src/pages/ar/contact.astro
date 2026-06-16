@@ -1,0 +1,66 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ContactForm from "@/components/ContactForm";
+import { company, contact, agencies } from "@/config/site";
+import { t } from "@/config/i18n";
+
+const locale = "ar" as const;
+const tr = t(locale);
+const cp = tr.contactPage;
+---
+
+<BaseLayout title={`${cp.eyebrow} — ${company.name}`} description={cp.description} locale={locale}>
+  <section class="bg-secondary py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent mb-3">{cp.eyebrow}</p>
+      <h1 class="font-serif text-3xl sm:text-4xl text-primary leading-tight max-w-2xl">{cp.title}</h1>
+      <p class="mt-4 text-base text-gray-600 leading-relaxed max-w-2xl">{cp.description}</p>
+    </div>
+  </section>
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 grid lg:grid-cols-5 gap-12">
+      <div class="lg:col-span-3">
+        <ContactForm client:load strings={cp} contactHref="/ar/contact" />
+      </div>
+      <aside class="lg:col-span-2 space-y-8">
+        <div>
+          <h2 class="font-serif text-2xl text-primary mb-4">{cp.coordTitle}</h2>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <span class="block text-xs uppercase tracking-wider text-gray-500">{cp.phoneLabel}</span>
+              <a href={`tel:${contact.phone}`} class="text-gray-900 hover:text-accent font-medium">{contact.phoneDisplay}</a>
+            </li>
+            <li>
+              <span class="block text-xs uppercase tracking-wider text-gray-500">{cp.emailLabel}</span>
+              <a href={`mailto:${contact.email}`} class="text-gray-900 hover:text-accent font-medium">{contact.email}</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl text-primary mb-3">{cp.agenciesTitle}</h3>
+          <div class="space-y-4">
+            {agencies.map((a) => (
+              <div class="border-l-2 border-accent pl-4">
+                <p class="font-semibold text-gray-900">{a.city}</p>
+                <p class="text-sm text-gray-600">{a.address}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <section class="pb-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <h2 class="font-serif text-2xl sm:text-3xl text-primary text-center mb-10">{cp.mapsTitle}</h2>
+      <div class="grid gap-6">
+        {agencies.map((a) => (
+          <div class="border border-gray-200 rounded-md overflow-hidden">
+            <div class="bg-secondary px-5 py-3 font-serif text-lg text-primary">{a.city}</div>
+            <iframe title={`${a.city}`} src={`https://www.google.com/maps?q=${a.mapsQuery}&output=embed`} width="100%" height="320" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

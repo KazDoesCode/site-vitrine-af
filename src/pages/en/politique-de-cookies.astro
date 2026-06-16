@@ -1,0 +1,109 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { company, contact, siteUrl } from "@/config/site";
+
+const locale = "en";
+const title = `Cookie Policy — ${company.name}`;
+const description = "Cookie policy for the Accueil Formalités website: types of cookies used, their purposes and how to manage them.";
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <section class="bg-secondary py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent mb-3">Digital transparency</p>
+      <h1 class="font-serif text-3xl sm:text-4xl text-primary leading-tight">Cookie Policy</h1>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 prose prose-slate max-w-none">
+
+      <p class="text-gray-700 leading-relaxed">
+        This policy explains what cookies are, which ones are used on <strong>{siteUrl}</strong>,
+        and how you can control them, in accordance with applicable French and European data
+        protection law (GDPR, Article 82 of the French Data Protection Act, and CNIL guidelines).
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">1. What is a cookie?</h2>
+      <p>
+        A cookie is a small text file placed on your device (computer, smartphone, tablet)
+        when you visit a website. It allows the site to remember certain information about
+        your browsing to improve your experience, or for statistical or advertising purposes.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">2. Cookies used on this site</h2>
+
+      <h3 class="font-serif text-xl text-primary mt-7 mb-3">2.1 Strictly necessary cookies</h3>
+      <p>
+        These cookies are essential for the technical operation of the site. They do not
+        collect any personal data and do not require your consent.
+      </p>
+      <table class="w-full text-sm border-collapse mt-3">
+        <thead>
+          <tr class="bg-secondary text-primary">
+            <th class="text-left p-3 border border-gray-200">Name</th>
+            <th class="text-left p-3 border border-gray-200">Purpose</th>
+            <th class="text-left p-3 border border-gray-200">Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border border-gray-200"><code>__session</code></td>
+            <td class="p-3 border border-gray-200">Maintaining the browsing session</td>
+            <td class="p-3 border border-gray-200">Session</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="font-serif text-xl text-primary mt-7 mb-3">2.2 Analytics cookies (not used)</h3>
+      <p>
+        This site does <strong>not use</strong> analytics or audience measurement cookies
+        (Google Analytics, Matomo, etc.). If we were to install any in the future, your
+        explicit consent would be required and this policy would be updated.
+      </p>
+
+      <h3 class="font-serif text-xl text-primary mt-7 mb-3">2.3 Advertising cookies (not used)</h3>
+      <p>
+        This site does <strong>not use</strong> advertising cookies or social media trackers
+        (Meta Pixel, Google Ads, etc.).
+      </p>
+
+      <h3 class="font-serif text-xl text-primary mt-7 mb-3">2.4 Third-party cookies (mapping)</h3>
+      <p>
+        The /contact page embeds a Google Maps map via an iframe. Google may set its own
+        cookies when the map loads. These cookies are subject to
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-accent underline">Google's privacy policy</a>.
+        The map only loads on the /contact page.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">3. Managing your cookies</h2>
+      <p>You can control or delete cookies at any time:</p>
+      <ul class="text-gray-700 space-y-2">
+        <li><strong>Via your browser</strong>: every browser lets you refuse or delete cookies in its settings.</li>
+        <li><strong>Chrome</strong>: Settings → Privacy and security → Cookies</li>
+        <li><strong>Firefox</strong>: Options → Privacy & Security → Cookies</li>
+        <li><strong>Safari</strong>: Preferences → Privacy → Cookies</li>
+        <li><strong>Edge</strong>: Settings → Privacy, search and services → Cookies</li>
+      </ul>
+      <p class="mt-4">
+        Disabling certain cookies may affect your browsing experience on this site or
+        third-party sites (in particular the Google Maps map).
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">4. Consent</h2>
+      <p>
+        As this site does not use cookies requiring consent (other than third-party Google Maps
+        cookies), no consent banner is displayed. If consent-required cookies were to be
+        installed, a CNIL-compliant banner would be displayed before any cookies are set.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">5. Contact</h2>
+      <p>
+        For any questions about our use of cookies, please contact us at
+        <a href={`mailto:${contact.email}`} class="text-accent underline">{contact.email}</a>.
+      </p>
+
+      <p class="text-sm text-gray-500 mt-12">Last updated: June 2026.</p>
+    </div>
+  </section>
+</BaseLayout>

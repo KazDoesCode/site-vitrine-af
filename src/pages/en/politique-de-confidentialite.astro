@@ -1,0 +1,135 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { company, contact, agencies, siteUrl } from "@/config/site";
+
+const locale = "en";
+const title = `Privacy Policy — ${company.name}`;
+const description = "Privacy policy and GDPR compliance for the Accueil Formalités website: how we collect, process and protect your personal data.";
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <section class="bg-secondary py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent mb-3">Data protection</p>
+      <h1 class="font-serif text-3xl sm:text-4xl text-primary leading-tight">Privacy Policy</h1>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 prose prose-slate max-w-none">
+
+      <p class="text-gray-700 leading-relaxed">
+        {company.name} is committed to protecting the privacy and security of the personal data of
+        its visitors and clients, in accordance with the General Data Protection Regulation
+        (GDPR — EU Regulation 2016/679) and the French Data Protection Act.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">1. Data Controller</h2>
+      <ul class="text-gray-700 space-y-1">
+        <li><strong>Company name:</strong> {company.name}</li>
+        <li><strong>Address:</strong> {agencies[0].address}</li>
+        <li><strong>Email:</strong> {contact.email}</li>
+        <li><strong>Phone:</strong> {contact.phoneDisplay}</li>
+      </ul>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">2. Data Collected</h2>
+      <p>We only collect data that you voluntarily provide to us:</p>
+      <ul class="text-gray-700 space-y-1">
+        <li>Full name</li>
+        <li>Email address</li>
+        <li>Phone number (optional)</li>
+        <li>Subject and content of your message</li>
+      </ul>
+      <p>
+        No sensitive data (as defined in Article 9 of the GDPR) is collected via the contact form.
+        Information about your administrative situation is only gathered within the scope of a
+        contractual engagement.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">3. Purposes and Legal Basis</h2>
+      <table class="w-full text-sm border-collapse mt-2">
+        <thead>
+          <tr class="bg-secondary text-primary">
+            <th class="text-left p-3 border border-gray-200">Purpose</th>
+            <th class="text-left p-3 border border-gray-200">Legal basis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border border-gray-200">Responding to contact requests</td>
+            <td class="p-3 border border-gray-200">Legitimate interest / contract performance</td>
+          </tr>
+          <tr class="bg-gray-50">
+            <td class="p-3 border border-gray-200">Client relationship management</td>
+            <td class="p-3 border border-gray-200">Contract performance</td>
+          </tr>
+          <tr>
+            <td class="p-3 border border-gray-200">Compliance with legal obligations</td>
+            <td class="p-3 border border-gray-200">Legal obligation</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">4. Retention Periods</h2>
+      <ul class="text-gray-700 space-y-1">
+        <li><strong>Contact requests:</strong> 3 years from the last exchange.</li>
+        <li><strong>Client files:</strong> 5 years after the end of the engagement (accounting and legal obligations).</li>
+        <li><strong>Connection data:</strong> 12 months (server logs).</li>
+      </ul>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">5. Data Recipients</h2>
+      <p>
+        Your data is exclusively accessible to authorised staff of {company.name}. It is never
+        sold or transferred to third parties for commercial purposes. It may be shared with
+        technical service providers (hosting, email) solely for the execution of their services
+        and under confidentiality agreements.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">6. Transfers Outside the EU</h2>
+      <p>
+        Your data is hosted within the European Union. In the event of a transfer outside the EU,
+        we ensure that appropriate safeguards (European Commission standard contractual clauses)
+        are in place.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">7. Your Rights</h2>
+      <p>Under the GDPR, you have the following rights:</p>
+      <ul class="text-gray-700 space-y-1">
+        <li><strong>Right of access</strong> — obtain a copy of your data.</li>
+        <li><strong>Right of rectification</strong> — correct inaccurate or incomplete data.</li>
+        <li><strong>Right to erasure</strong> — request deletion of your data (subject to legal obligations).</li>
+        <li><strong>Right to restriction</strong> — limit processing in certain circumstances.</li>
+        <li><strong>Right to portability</strong> — receive your data in a structured format.</li>
+        <li><strong>Right to object</strong> — object to processing based on legitimate interest.</li>
+      </ul>
+      <p>
+        To exercise these rights, contact us at <a href={`mailto:${contact.email}`} class="text-accent underline">{contact.email}</a>.
+        You also have the right to lodge a complaint with the
+        <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-accent underline">CNIL</a>
+        (French Data Protection Authority).
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">8. Cookies</h2>
+      <p>
+        This website does not use advertising cookies or third-party trackers. Any functional cookies
+        that may be set are strictly necessary for the operation of the site and do not require your
+        consent under applicable law.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">9. Security</h2>
+      <p>
+        We implement appropriate technical and organisational measures to protect your data against
+        unauthorised access, loss or disclosure: HTTPS connection, restricted data access, internal
+        confidentiality procedures.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">10. Changes</h2>
+      <p>
+        We reserve the right to modify this policy at any time. The date of the latest update is
+        shown below. We encourage you to review it regularly.
+      </p>
+
+      <p class="text-sm text-gray-500 mt-12">Last updated: June 2026.</p>
+    </div>
+  </section>
+</BaseLayout>

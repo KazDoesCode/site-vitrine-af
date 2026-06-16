@@ -1,0 +1,73 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { company, contact, agencies, siteUrl } from "@/config/site";
+
+const locale = "es";
+const title = `Aviso legal — ${company.name}`;
+const description = "Aviso legal del sitio web Accueil Formalités: editor, alojamiento, propiedad intelectual y responsabilidad.";
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <section class="bg-secondary py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent mb-3">Información legal</p>
+      <h1 class="font-serif text-3xl sm:text-4xl text-primary leading-tight">Aviso legal</h1>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 prose prose-slate max-w-none">
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">1. Editor del sitio web</h2>
+      <p>El sitio web <strong>{siteUrl}</strong> es editado por:</p>
+      <ul class="text-gray-700 space-y-1">
+        <li><strong>Razón social:</strong> {company.name}</li>
+        <li><strong>Dirección:</strong> {agencies[0].address}</li>
+        <li><strong>Teléfono:</strong> {contact.phoneDisplay}</li>
+        <li><strong>Correo electrónico:</strong> {contact.email}</li>
+      </ul>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">2. Director de publicación</h2>
+      <p>El director de publicación es el representante legal de {company.name}.</p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">3. Alojamiento</h2>
+      <p>
+        Los datos del proveedor de alojamiento se añadirán antes de la puesta en producción
+        (p. ej. OVH, Vercel, Netlify…), de conformidad con la legislación francesa aplicable.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">4. Propiedad intelectual</h2>
+      <p>
+        Todos los contenidos de este sitio (textos, imágenes, logotipo, gráficos) son propiedad
+        exclusiva de {company.name} o de sus socios y están protegidos por las leyes francesas
+        e internacionales sobre propiedad intelectual.
+      </p>
+      <p>
+        Queda prohibida cualquier reproducción, representación, modificación, publicación o
+        adaptación de cualquier elemento del sitio sin la autorización escrita previa de {company.name}.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">5. Responsabilidad</h2>
+      <p>
+        La información publicada en este sitio es de carácter meramente informativo. {company.name}
+        hace todo lo posible por mantenerla actualizada, pero no podrá ser considerada responsable
+        de errores, omisiones ni de los resultados obtenidos de un uso indebido de dicha información.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">6. Hipervínculos</h2>
+      <p>
+        El sitio puede contener enlaces a sitios de terceros. {company.name} no ejerce ningún
+        control sobre dichos sitios y declina toda responsabilidad sobre su contenido o sus
+        prácticas en materia de datos personales.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">7. Ley aplicable</h2>
+      <p>
+        El presente aviso legal se rige por la legislación francesa. En caso de litigio, los
+        tribunales franceses serán los únicos competentes.
+      </p>
+
+      <p class="text-sm text-gray-500 mt-12">Última actualización: junio de 2026.</p>
+    </div>
+  </section>
+</BaseLayout>

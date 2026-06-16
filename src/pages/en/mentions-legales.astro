@@ -1,0 +1,72 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { company, contact, agencies, siteUrl } from "@/config/site";
+
+const locale = "en";
+const title = `Legal Notice — ${company.name}`;
+const description = "Legal notice for the Accueil Formalités website: publisher, hosting, intellectual property and liability.";
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <section class="bg-secondary py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent mb-3">Legal information</p>
+      <h1 class="font-serif text-3xl sm:text-4xl text-primary leading-tight">Legal Notice</h1>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 prose prose-slate max-w-none">
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">1. Website Publisher</h2>
+      <p>The website <strong>{siteUrl}</strong> is published by:</p>
+      <ul class="text-gray-700 space-y-1">
+        <li><strong>Company name:</strong> {company.name}</li>
+        <li><strong>Address:</strong> {agencies[0].address}</li>
+        <li><strong>Phone:</strong> {contact.phoneDisplay}</li>
+        <li><strong>Email:</strong> {contact.email}</li>
+      </ul>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">2. Publication Director</h2>
+      <p>The publication director is the legal representative of {company.name}.</p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">3. Hosting</h2>
+      <p>
+        Hosting provider details will be added before going live (e.g. OVH, Vercel, Netlify…),
+        in accordance with French Law No. 2004-575 of 21 June 2004 (LCEN).
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">4. Intellectual Property</h2>
+      <p>
+        All content on this website (texts, images, logo, graphics) is the exclusive property of
+        {company.name} or its partners and is protected by French and international intellectual
+        property laws.
+      </p>
+      <p>
+        Any reproduction, representation, modification, publication or adaptation of any element
+        of the site is prohibited without the prior written consent of {company.name}.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">5. Liability</h2>
+      <p>
+        The information published on this site is for general information purposes only.
+        {company.name} makes every effort to keep the information up to date but cannot be held
+        liable for any errors, omissions or results obtained from misuse of this information.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">6. Hyperlinks</h2>
+      <p>
+        The site may contain links to third-party websites. {company.name} has no control over
+        those sites and accepts no responsibility for their content or data practices.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">7. Applicable Law</h2>
+      <p>
+        These legal notices are governed by French law. In the event of a dispute, French courts
+        shall have sole jurisdiction.
+      </p>
+
+      <p class="text-sm text-gray-500 mt-12">Last updated: June 2026.</p>
+    </div>
+  </section>
+</BaseLayout>

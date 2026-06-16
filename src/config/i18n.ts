@@ -1,0 +1,496 @@
+import type { Locale } from "./site";
+
+export type Translations = {
+  nav: {
+    home: string;
+    services: string;
+    about: string;
+    contact: string;
+    cta: string;
+  };
+  hero: {
+    eyebrow: string;
+    slogan: string;
+    description: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
+  };
+  stats: {
+    experience: string;
+    cases: string;
+    satisfaction: string;
+  };
+  about: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    link: string;
+  };
+  services: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    learnMore: string;
+  };
+  values: {
+    eyebrow: string;
+    title: string;
+  };
+  cta: {
+    title: string;
+    description: string;
+    button: string;
+  };
+  servicesPage: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    serviceLabel: string;
+    bullets: [string, string, string];
+    cta: string;
+  };
+  aboutPage: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    expertiseTitle: string;
+    expertiseP1: string;
+    expertiseP2: string;
+    valuesEyebrow: string;
+    valuesTitle: string;
+    cta: string;
+  };
+  contactPage: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    formTitle: string;
+    fields: {
+      name: string;
+      email: string;
+      phone: string;
+      subject: string;
+      message: string;
+    };
+    submit: string;
+    sending: string;
+    success: string;
+    error: string;
+    coordTitle: string;
+    phoneLabel: string;
+    emailLabel: string;
+    agenciesTitle: string;
+    mapsTitle: string;
+    optional: string;
+    required: string;
+    errors: {
+      nameTooShort: string;
+      emailInvalid: string;
+      subjectTooShort: string;
+      messageTooShort: string;
+    };
+  };
+  footer: {
+    nav: string;
+    contact: string;
+    legal: string;
+    privacy: string;
+    cookies: string;
+    rights: string;
+  };
+  whatsapp: string;
+};
+
+export const translations: Record<Locale, Translations> = {
+  fr: {
+    nav: {
+      home: "Accueil",
+      services: "Nos services",
+      about: "À propos",
+      contact: "Contact",
+      cta: "Prendre rendez-vous",
+    },
+    hero: {
+      eyebrow: "Cabinet d'accompagnement administratif",
+      slogan: "Faire de vos démarches un succès",
+      description:
+        "Titre de séjour, naturalisation, regroupement familial, autorisation de travail : nous vous accompagnons à chaque étape, avec rigueur, transparence et confidentialité.",
+      ctaPrimary: "Prendre rendez-vous",
+      ctaSecondary: "Nos services",
+    },
+    stats: { experience: "Expérience", cases: "Dossiers traités", satisfaction: "Satisfaction" },
+    about: {
+      eyebrow: "Qui sommes-nous",
+      title: "Un cabinet au service des étrangers en France",
+      description:
+        "Depuis plus de dix ans, nous accompagnons les particuliers et les familles dans la régularisation et le suivi de leur situation administrative. Nous maîtrisons les procédures préfectorales et défendons chaque dossier avec rigueur.",
+      link: "En savoir plus →",
+    },
+    services: {
+      eyebrow: "Nos expertises",
+      title: "Des services adaptés à chaque situation",
+      description:
+        "Que vous soyez salarié, étudiant, conjoint de Français ou demandeur de naturalisation, nous prenons en charge votre dossier de bout en bout.",
+      learnMore: "En savoir plus →",
+    },
+    values: { eyebrow: "Nos engagements", title: "Quatre valeurs qui guident notre cabinet" },
+    cta: {
+      title: "Une démarche à entreprendre ? Parlons-en.",
+      description:
+        "Premier échange confidentiel et sans engagement. Nous évaluons votre situation et vous proposons un plan d'action clair.",
+      button: "Prendre rendez-vous",
+    },
+    servicesPage: {
+      eyebrow: "Nos services",
+      title: "Un accompagnement pour chaque démarche",
+      description:
+        "Notre équipe traite l'ensemble des procédures administratives liées au séjour, au travail et à la nationalité. Chaque dossier fait l'objet d'une analyse personnalisée.",
+      serviceLabel: "Service",
+      bullets: ["Analyse approfondie de votre situation", "Préparation complète du dossier", "Suivi jusqu'à la décision finale"],
+      cta: "Demander un rendez-vous",
+    },
+    aboutPage: {
+      eyebrow: "Notre cabinet",
+      title: "Une expertise reconnue au service des étrangers en France",
+      description:
+        "Depuis plus de dix ans, nous accompagnons les particuliers, les familles et les entreprises dans toutes leurs démarches administratives en France. Notre approche : la précision, la pédagogie et la disponibilité.",
+      expertiseTitle: "Notre expertise",
+      expertiseP1:
+        "Nous connaissons les exigences des préfectures, des consulats, de l'OFII et des services de la DREETS. Cette maîtrise du terrain nous permet d'anticiper les difficultés, de constituer des dossiers solides et de réduire les délais de traitement.",
+      expertiseP2:
+        "Nous intervenons aussi bien sur les premières demandes que sur les renouvellements, les recours et les situations complexes (refus, OQTF, régularisation).",
+      valuesEyebrow: "Nos valeurs",
+      valuesTitle: "Quatre engagements forts",
+      cta: "Prendre rendez-vous",
+    },
+    contactPage: {
+      eyebrow: "Contact",
+      title: "Parlons de votre situation",
+      description: "Nous vous répondons sous 24h ouvrées. Premier échange confidentiel et sans engagement.",
+      formTitle: "Formulaire de contact",
+      fields: { name: "Nom complet", email: "E-mail", phone: "Téléphone", subject: "Objet", message: "Message" },
+      submit: "Envoyer ma demande",
+      sending: "Envoi en cours…",
+      success: "Merci, votre message a bien été envoyé. Nous revenons vers vous sous 24h ouvrées.",
+      error: "Une erreur est survenue. Merci de réessayer ou de nous appeler directement.",
+      coordTitle: "Nos coordonnées",
+      phoneLabel: "Téléphone",
+      emailLabel: "E-mail",
+      agenciesTitle: "Notre agence",
+      mapsTitle: "Nous trouver",
+      optional: "(facultatif)",
+      required: "*",
+      errors: {
+        nameTooShort: "Nom trop court",
+        emailInvalid: "E-mail invalide",
+        subjectTooShort: "Objet trop court",
+        messageTooShort: "Message trop court",
+      },
+    },
+    footer: {
+      nav: "Navigation",
+      contact: "Contact",
+      legal: "Mentions légales",
+      privacy: "Politique de confidentialité",
+      cookies: "Politique de cookies",
+      rights: "Tous droits réservés.",
+    },
+    whatsapp: "Bonjour, je souhaite des informations sur vos services.",
+  },
+
+  en: {
+    nav: {
+      home: "Home",
+      services: "Our services",
+      about: "About",
+      contact: "Contact",
+      cta: "Book an appointment",
+    },
+    hero: {
+      eyebrow: "Administrative assistance office",
+      slogan: "Making your formalities a success",
+      description:
+        "Residence permit, naturalisation, family reunification, work authorisation: we guide you at every step, with rigour, transparency and confidentiality.",
+      ctaPrimary: "Book an appointment",
+      ctaSecondary: "Our services",
+    },
+    stats: { experience: "Experience", cases: "Cases handled", satisfaction: "Satisfaction" },
+    about: {
+      eyebrow: "Who we are",
+      title: "A firm dedicated to foreigners in France",
+      description:
+        "For over ten years, we have been supporting individuals and families in regularising and managing their administrative status in France. We master prefectural procedures and fight for every file.",
+      link: "Learn more →",
+    },
+    services: {
+      eyebrow: "Our expertise",
+      title: "Services tailored to every situation",
+      description:
+        "Whether you are an employee, student, spouse of a French citizen or applying for naturalisation, we handle your file from start to finish.",
+      learnMore: "Learn more →",
+    },
+    values: { eyebrow: "Our commitments", title: "Four values that guide our firm" },
+    cta: {
+      title: "A procedure to start? Let's talk.",
+      description: "First consultation is confidential and free of charge. We assess your situation and propose a clear action plan.",
+      button: "Book an appointment",
+    },
+    servicesPage: {
+      eyebrow: "Our services",
+      title: "Support for every procedure",
+      description: "Our team handles all administrative procedures related to residence, work and nationality. Each file receives a personalised analysis.",
+      serviceLabel: "Service",
+      bullets: ["In-depth analysis of your situation", "Complete file preparation", "Follow-up until the final decision"],
+      cta: "Request an appointment",
+    },
+    aboutPage: {
+      eyebrow: "Our firm",
+      title: "Recognised expertise at the service of foreigners in France",
+      description:
+        "For over ten years, we have been supporting individuals, families and businesses with all their administrative procedures in France. Our approach: precision, pedagogy and availability.",
+      expertiseTitle: "Our expertise",
+      expertiseP1:
+        "We know the requirements of préfectures, consulates, OFII and DREETS. This field knowledge allows us to anticipate difficulties, build solid files and reduce processing times.",
+      expertiseP2:
+        "We handle first-time applications as well as renewals, appeals and complex situations (refusals, OQTF, regularisation).",
+      valuesEyebrow: "Our values",
+      valuesTitle: "Four strong commitments",
+      cta: "Book an appointment",
+    },
+    contactPage: {
+      eyebrow: "Contact",
+      title: "Let's talk about your situation",
+      description: "We reply within 24 business hours. First consultation is confidential and free of charge.",
+      formTitle: "Contact form",
+      fields: { name: "Full name", email: "Email", phone: "Phone", subject: "Subject", message: "Message" },
+      submit: "Send my request",
+      sending: "Sending…",
+      success: "Thank you, your message has been sent. We will get back to you within 24 business hours.",
+      error: "An error occurred. Please try again or call us directly.",
+      coordTitle: "Contact details",
+      phoneLabel: "Phone",
+      emailLabel: "Email",
+      agenciesTitle: "Our office",
+      mapsTitle: "Find us",
+      optional: "(optional)",
+      required: "*",
+      errors: {
+        nameTooShort: "Name too short",
+        emailInvalid: "Invalid email",
+        subjectTooShort: "Subject too short",
+        messageTooShort: "Message too short",
+      },
+    },
+    footer: {
+      nav: "Navigation",
+      contact: "Contact",
+      legal: "Legal notice",
+      privacy: "Privacy policy",
+      cookies: "Cookie policy",
+      rights: "All rights reserved.",
+    },
+    whatsapp: "Hello, I would like information about your services.",
+  },
+
+  es: {
+    nav: {
+      home: "Inicio",
+      services: "Nuestros servicios",
+      about: "Quiénes somos",
+      contact: "Contacto",
+      cta: "Pedir cita",
+    },
+    hero: {
+      eyebrow: "Despacho de asesoría administrativa",
+      slogan: "Haciendo de sus trámites un éxito",
+      description:
+        "Permiso de residencia, naturalización, reagrupación familiar, autorización de trabajo: le acompañamos en cada etapa, con rigor, transparencia y confidencialidad.",
+      ctaPrimary: "Pedir cita",
+      ctaSecondary: "Nuestros servicios",
+    },
+    stats: { experience: "Experiencia", cases: "Expedientes gestionados", satisfaction: "Satisfacción" },
+    about: {
+      eyebrow: "Quiénes somos",
+      title: "Un despacho al servicio de los extranjeros en Francia",
+      description:
+        "Desde hace más de diez años, acompañamos a particulares y familias en la regularización y seguimiento de su situación administrativa en Francia. Dominamos los procedimientos prefectorales y defendemos cada expediente con rigor.",
+      link: "Saber más →",
+    },
+    services: {
+      eyebrow: "Nuestra experiencia",
+      title: "Servicios adaptados a cada situación",
+      description:
+        "Tanto si es trabajador, estudiante, cónyuge de un ciudadano francés o solicitante de naturalización, nos encargamos de su expediente de principio a fin.",
+      learnMore: "Saber más →",
+    },
+    values: { eyebrow: "Nuestros compromisos", title: "Cuatro valores que guían nuestro despacho" },
+    cta: {
+      title: "¿Un trámite que iniciar? Hablemos.",
+      description: "Primera consulta confidencial y sin compromiso. Evaluamos su situación y le proponemos un plan de acción claro.",
+      button: "Pedir cita",
+    },
+    servicesPage: {
+      eyebrow: "Nuestros servicios",
+      title: "Acompañamiento para cada trámite",
+      description: "Nuestro equipo gestiona todos los procedimientos administrativos relacionados con la residencia, el trabajo y la nacionalidad.",
+      serviceLabel: "Servicio",
+      bullets: ["Análisis en profundidad de su situación", "Preparación completa del expediente", "Seguimiento hasta la decisión final"],
+      cta: "Solicitar una cita",
+    },
+    aboutPage: {
+      eyebrow: "Nuestro despacho",
+      title: "Una experiencia reconocida al servicio de los extranjeros en Francia",
+      description:
+        "Desde hace más de diez años, acompañamos a particulares, familias y empresas en todos sus trámites administrativos en Francia. Nuestra filosofía: precisión, pedagogía y disponibilidad.",
+      expertiseTitle: "Nuestra experiencia",
+      expertiseP1:
+        "Conocemos los requisitos de las prefecturas, consulados, OFII y DREETS. Este conocimiento del terreno nos permite anticipar dificultades y reducir los plazos de tramitación.",
+      expertiseP2:
+        "Intervenimos tanto en primeras solicitudes como en renovaciones, recursos y situaciones complejas (denegaciones, OQTF, regularización).",
+      valuesEyebrow: "Nuestros valores",
+      valuesTitle: "Cuatro compromisos fuertes",
+      cta: "Pedir cita",
+    },
+    contactPage: {
+      eyebrow: "Contacto",
+      title: "Hablemos de su situación",
+      description: "Le respondemos en 24 horas hábiles. Primera consulta confidencial y sin compromiso.",
+      formTitle: "Formulario de contacto",
+      fields: { name: "Nombre completo", email: "Correo electrónico", phone: "Teléfono", subject: "Asunto", message: "Mensaje" },
+      submit: "Enviar mi solicitud",
+      sending: "Enviando…",
+      success: "Gracias, su mensaje ha sido enviado. Le responderemos en 24 horas hábiles.",
+      error: "Se ha producido un error. Por favor, inténtelo de nuevo o llámenos.",
+      coordTitle: "Nuestros datos",
+      phoneLabel: "Teléfono",
+      emailLabel: "Correo electrónico",
+      agenciesTitle: "Nuestra oficina",
+      mapsTitle: "Encuéntrenos",
+      optional: "(opcional)",
+      required: "*",
+      errors: {
+        nameTooShort: "Nombre demasiado corto",
+        emailInvalid: "Correo inválido",
+        subjectTooShort: "Asunto demasiado corto",
+        messageTooShort: "Mensaje demasiado corto",
+      },
+    },
+    footer: {
+      nav: "Navegación",
+      contact: "Contacto",
+      legal: "Aviso legal",
+      privacy: "Política de privacidad",
+      cookies: "Política de cookies",
+      rights: "Todos los derechos reservados.",
+    },
+    whatsapp: "Hola, me gustaría obtener información sobre sus servicios.",
+  },
+
+  ar: {
+    nav: {
+      home: "الرئيسية",
+      services: "خدماتنا",
+      about: "من نحن",
+      contact: "اتصل بنا",
+      cta: "حجز موعد",
+    },
+    hero: {
+      eyebrow: "مكتب المساعدة الإدارية",
+      slogan: "نجعل إجراءاتكم ناجحة",
+      description:
+        "تصريح إقامة، جنسية، لمّ شمل الأسرة، تصريح عمل: نُرافقكم في كل خطوة بدقة وشفافية وسرية تامة.",
+      ctaPrimary: "حجز موعد",
+      ctaSecondary: "خدماتنا",
+    },
+    stats: { experience: "سنوات الخبرة", cases: "ملفات معالَجة", satisfaction: "رضا العملاء" },
+    about: {
+      eyebrow: "من نحن",
+      title: "مكتب في خدمة الأجانب في فرنسا",
+      description:
+        "منذ أكثر من عشر سنوات، نرافق الأفراد والعائلات في تسوية وضعهم الإداري. نُتقن الإجراءات المحلية وندافع عن كل ملف بجدية.",
+      link: "اعرف أكثر ←",
+    },
+    services: {
+      eyebrow: "خبرتنا",
+      title: "خدمات مكيّفة لكل وضع",
+      description:
+        "سواء كنت موظفاً أو طالباً أو زوجاً لمواطن فرنسي أو طالب تجنيس، نتولى ملفك من الألف إلى الياء.",
+      learnMore: "اعرف أكثر ←",
+    },
+    values: { eyebrow: "التزاماتنا", title: "أربع قيم توجّه مكتبنا" },
+    cta: {
+      title: "لديكم إجراء للقيام به؟ تحدثوا معنا.",
+      description: "أول تشاور سري وبدون التزام. نقيّم وضعكم ونقترح خطة عمل واضحة.",
+      button: "حجز موعد",
+    },
+    servicesPage: {
+      eyebrow: "خدماتنا",
+      title: "مرافقة لكل إجراء",
+      description: "يتولى فريقنا جميع الإجراءات الإدارية المتعلقة بالإقامة والعمل والجنسية. يحظى كل ملف بتحليل شخصي.",
+      serviceLabel: "خدمة",
+      bullets: ["تحليل معمّق لوضعكم", "إعداد كامل للملف", "متابعة حتى القرار النهائي"],
+      cta: "طلب موعد",
+    },
+    aboutPage: {
+      eyebrow: "مكتبنا",
+      title: "خبرة معترف بها في خدمة الأجانب في فرنسا",
+      description: "منذ أكثر من عشر سنوات، نرافق الأفراد والعائلات والشركات في جميع إجراءاتهم الإدارية.",
+      expertiseTitle: "خبرتنا",
+      expertiseP1:
+        "يعرف مستشارونا متطلبات المحافظات والقنصليات ومكتب الهجرة والاندماج (OFII) ومديرية العمل (DREETS). تتيح لنا هذه المعرفة الميدانية توقع الصعوبات وبناء ملفات متينة وتقليص آجال المعالجة.",
+      expertiseP2:
+        "نتدخل في الطلبات الأولى كما في التجديدات والطعون والحالات المعقدة (الرفض، OQTF، التسوية).",
+      valuesEyebrow: "قيمنا",
+      valuesTitle: "أربعة التزامات قوية",
+      cta: "حجز موعد",
+    },
+    contactPage: {
+      eyebrow: "اتصل بنا",
+      title: "تحدثوا معنا عن وضعكم",
+      description: "نردّ خلال 24 ساعة عمل. أول تشاور سري وبدون التزام.",
+      formTitle: "نموذج الاتصال",
+      fields: { name: "الاسم الكامل", email: "البريد الإلكتروني", phone: "الهاتف", subject: "الموضوع", message: "الرسالة" },
+      submit: "إرسال طلبي",
+      sending: "جارٍ الإرسال…",
+      success: "شكراً، تم إرسال رسالتكم. سنردّ عليكم خلال 24 ساعة عمل.",
+      error: "حدث خطأ. يرجى المحاولة مجدداً أو الاتصال بنا مباشرة.",
+      coordTitle: "معلومات الاتصال",
+      phoneLabel: "الهاتف",
+      emailLabel: "البريد الإلكتروني",
+      agenciesTitle: "مكتبنا",
+      mapsTitle: "جدونا",
+      optional: "(اختياري)",
+      required: "*",
+      errors: {
+        nameTooShort: "الاسم قصير جداً",
+        emailInvalid: "بريد إلكتروني غير صالح",
+        subjectTooShort: "الموضوع قصير جداً",
+        messageTooShort: "الرسالة قصيرة جداً",
+      },
+    },
+    footer: {
+      nav: "التنقل",
+      contact: "اتصل بنا",
+      legal: "الإشعار القانوني",
+      privacy: "سياسة الخصوصية",
+      cookies: "سياسة ملفات تعريف الارتباط",
+      rights: "جميع الحقوق محفوظة.",
+    },
+    whatsapp: "مرحباً، أودّ الحصول على معلومات حول خدماتكم.",
+  },
+};
+
+export function t(locale: Locale): Translations {
+  return translations[locale];
+}
+
+/** Retourne true si la langue s'écrit de droite à gauche */
+export function isRTL(locale: Locale): boolean {
+  return locale === "ar";
+}
+
+/** Retourne le préfixe d'URL pour une locale (fr = "", en = "/en", etc.) */
+export function localePath(locale: Locale, path: string): string {
+  const prefix = locale === "fr" ? "" : `/${locale}`;
+  return `${prefix}${path}`;
+}

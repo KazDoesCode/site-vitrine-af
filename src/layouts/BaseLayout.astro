@@ -1,0 +1,83 @@
+---
+import { company, seo, siteUrl, locales, localeLabels } from "@/config/site";
+import type { Locale } from "@/config/site";
+import { isRTL, localePath } from "@/config/i18n";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import WhatsAppButton from "@/components/WhatsAppButton.astro";
+import "@/styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonical?: string;
+  locale?: Locale;
+}
+
+const {
+  title = seo.defaultTitle,
+  description = seo.defaultDescription,
+  ogImage = `${siteUrl}/images/hero.jpg`,
+  locale = "fr",
+} = Astro.props;
+
+const canonical = siteUrl + Astro.url.pathname;
+const dir = isRTL(locale) ? "rtl" : "ltr";
+const lang = locale;
+---
+
+<!doctype html>
+<html lang={lang} dir={dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={company.name} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Alternate hreflang pour le SEO multilingue -->
+    {locales.map((l) => (
+      <link rel="alternate" hreflang={l} href={`${siteUrl}${localePath(l, Astro.url.pathname.replace(/^\/(en|es|ar)/, ""))}`} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}${Astro.url.pathname}`} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={locale === "fr" ? "fr_FR" : locale === "en" ? "en_GB" : locale === "es" ? "es_ES" : "ar_AR"} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="theme-color" content="#1e3a5f" />
+    <link rel="icon" href="/images/logo2.png" type="image/png" />
+
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <!-- Lien d'évitement RGAA 1.1 / WCAG 2.4.1 -->
+    <a href="#contenu-principal" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg">
+      Aller au contenu principal
+    </a>
+    <Header locale={locale} />
+    <main id="contenu-principal" class="flex-1" tabindex="-1">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+    <WhatsAppButton locale={locale} />
+  </body>
+</html>

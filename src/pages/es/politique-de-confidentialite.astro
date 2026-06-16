@@ -1,0 +1,135 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { company, contact, agencies, siteUrl } from "@/config/site";
+
+const locale = "es";
+const title = `Política de privacidad — ${company.name}`;
+const description = "Política de privacidad y cumplimiento RGPD del sitio web Accueil Formalités: cómo recopilamos, tratamos y protegemos sus datos personales.";
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <section class="bg-secondary py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent mb-3">Protección de datos</p>
+      <h1 class="font-serif text-3xl sm:text-4xl text-primary leading-tight">Política de privacidad</h1>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 prose prose-slate max-w-none">
+
+      <p class="text-gray-700 leading-relaxed">
+        {company.name} se compromete a proteger la privacidad y la seguridad de los datos personales
+        de sus visitantes y clientes, de conformidad con el Reglamento General de Protección de Datos
+        (RGPD — Reglamento UE 2016/679) y la Ley Orgánica de Protección de Datos francesa.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">1. Responsable del tratamiento</h2>
+      <ul class="text-gray-700 space-y-1">
+        <li><strong>Razón social:</strong> {company.name}</li>
+        <li><strong>Dirección:</strong> {agencies[0].address}</li>
+        <li><strong>Correo electrónico:</strong> {contact.email}</li>
+        <li><strong>Teléfono:</strong> {contact.phoneDisplay}</li>
+      </ul>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">2. Datos recopilados</h2>
+      <p>Solo recopilamos los datos que usted nos facilita voluntariamente:</p>
+      <ul class="text-gray-700 space-y-1">
+        <li>Nombre y apellidos</li>
+        <li>Dirección de correo electrónico</li>
+        <li>Número de teléfono (opcional)</li>
+        <li>Asunto y contenido de su mensaje</li>
+      </ul>
+      <p>
+        No se recopilan datos sensibles (en el sentido del artículo 9 del RGPD) a través del
+        formulario de contacto. La información relativa a su situación administrativa solo se
+        recoge en el marco de un compromiso contractual.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">3. Finalidades y base jurídica</h2>
+      <table class="w-full text-sm border-collapse mt-2">
+        <thead>
+          <tr class="bg-secondary text-primary">
+            <th class="text-left p-3 border border-gray-200">Finalidad</th>
+            <th class="text-left p-3 border border-gray-200">Base jurídica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border border-gray-200">Responder a solicitudes de contacto</td>
+            <td class="p-3 border border-gray-200">Interés legítimo / ejecución de un contrato</td>
+          </tr>
+          <tr class="bg-gray-50">
+            <td class="p-3 border border-gray-200">Gestión de la relación con el cliente</td>
+            <td class="p-3 border border-gray-200">Ejecución de un contrato</td>
+          </tr>
+          <tr>
+            <td class="p-3 border border-gray-200">Cumplimiento de obligaciones legales</td>
+            <td class="p-3 border border-gray-200">Obligación legal</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">4. Plazos de conservación</h2>
+      <ul class="text-gray-700 space-y-1">
+        <li><strong>Solicitudes de contacto:</strong> 3 años desde el último intercambio.</li>
+        <li><strong>Expedientes de clientes:</strong> 5 años tras el fin de la misión (obligaciones contables y legales).</li>
+        <li><strong>Datos de conexión:</strong> 12 meses (registros del servidor).</li>
+      </ul>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">5. Destinatarios de los datos</h2>
+      <p>
+        Sus datos son accesibles exclusivamente para el personal autorizado de {company.name}.
+        No se venden ni ceden a terceros con fines comerciales. Podrán compartirse con proveedores
+        técnicos (alojamiento, correo electrónico) únicamente para la prestación de sus servicios
+        y bajo acuerdos de confidencialidad.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">6. Transferencias fuera de la UE</h2>
+      <p>
+        Sus datos están alojados dentro de la Unión Europea. En caso de transferencia fuera de la UE,
+        garantizamos la existencia de salvaguardias adecuadas (cláusulas contractuales tipo de la
+        Comisión Europea).
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">7. Sus derechos</h2>
+      <p>De conformidad con el RGPD, usted dispone de los siguientes derechos:</p>
+      <ul class="text-gray-700 space-y-1">
+        <li><strong>Derecho de acceso</strong> — obtener una copia de sus datos.</li>
+        <li><strong>Derecho de rectificación</strong> — corregir datos inexactos o incompletos.</li>
+        <li><strong>Derecho al olvido</strong> — solicitar la supresión de sus datos (salvo obligaciones legales).</li>
+        <li><strong>Derecho de limitación</strong> — limitar el tratamiento en determinadas circunstancias.</li>
+        <li><strong>Derecho a la portabilidad</strong> — recibir sus datos en un formato estructurado.</li>
+        <li><strong>Derecho de oposición</strong> — oponerse al tratamiento basado en interés legítimo.</li>
+      </ul>
+      <p>
+        Para ejercer estos derechos, contáctenos en <a href={`mailto:${contact.email}`} class="text-accent underline">{contact.email}</a>.
+        También tiene derecho a presentar una reclamación ante la
+        <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-accent underline">CNIL</a>
+        (Comisión Nacional de Informática y Libertades francesa).
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">8. Cookies</h2>
+      <p>
+        Este sitio web no utiliza cookies publicitarias ni rastreadores de terceros. Las cookies
+        funcionales que puedan instalarse son estrictamente necesarias para el funcionamiento del
+        sitio y no requieren su consentimiento.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">9. Seguridad</h2>
+      <p>
+        Adoptamos las medidas técnicas y organizativas adecuadas para proteger sus datos frente a
+        accesos no autorizados, pérdidas o divulgaciones: conexión HTTPS, acceso restringido a los
+        datos, procedimientos internos de confidencialidad.
+      </p>
+
+      <h2 class="font-serif text-2xl text-primary mt-10 mb-4">10. Modificaciones</h2>
+      <p>
+        Nos reservamos el derecho a modificar esta política en cualquier momento. La fecha de la
+        última actualización figura a continuación. Le recomendamos consultarla periódicamente.
+      </p>
+
+      <p class="text-sm text-gray-500 mt-12">Última actualización: junio de 2026.</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,150 @@
+---
+import { company, images, locales, localeLabels } from "@/config/site";
+import type { Locale } from "@/config/site";
+import { t, localePath } from "@/config/i18n";
+
+interface Props {
+  locale?: Locale;
+}
+const { locale = "fr" } = Astro.props;
+const tr = t(locale);
+
+const currentPath = Astro.url.pathname.replace(/^\/(en|es|ar)/, "") || "/";
+
+const nav = [
+  { href: localePath(locale, "/"), label: tr.nav.home },
+  { href: localePath(locale, "/services"), label: tr.nav.services },
+  { href: localePath(locale, "/a-propos"), label: tr.nav.about },
+  { href: localePath(locale, "/contact"), label: tr.nav.contact },
+];
+
+const current = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 bg-white border-b border-gray-200">
+  <div class="tricolor-bar"></div>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between h-20 gap-4">
+
+    <!-- Logo -->
+    <a href={localePath(locale, "/")} class="flex items-center gap-3 shrink-0">
+      <img src={images.logo} alt={`${company.name} — logo`} class="h-14 w-auto" width="56" height="56" />
+      <div class="hidden sm:block">
+        <span class="font-serif text-lg text-primary block leading-tight">{company.name}</span>
+      </div>
+    </a>
+
+    <!-- Navigation desktop -->
+    <nav aria-label="Navigation principale" class="hidden md:flex items-center gap-6">
+      {nav.map(({ href, label }) => (
+        <a
+          href={href}
+          class={`text-sm font-medium transition-colors hover:text-primary ${
+            current === href ? "text-primary font-semibold" : "text-gray-700"
+          }`}
+        >
+          {label}
+        </a>
+      ))}
+      <a
+        href={localePath(locale, "/contact")}
+        class="inline-flex items-center justify-center rounded-md bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-accent-dark hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+      >
+        {tr.nav.cta}
+      </a>
+
+      <!-- Sélecteur de langue -->
+      <div class="relative group">
+        <button
+          class="flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-primary border border-gray-200 rounded-md px-3 py-2 transition-colors"
+          aria-label="Changer de langue"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0">
+            <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="uppercase">{locale}</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+
+        <div class="absolute right-0 top-full mt-1 w-36 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+          {locales.map((l) => (
+            <a
+              href={localePath(l, currentPath)}
+              class={`flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-secondary transition-colors ${
+                l === locale ? "text-primary font-semibold" : "text-gray-700"
+              }`}
+            >
+              {l === "ar" && <span class="text-base">🇸🇦</span>}
+              {l === "fr" && <span class="text-base">🇫🇷</span>}
+              {l === "en" && <span class="text-base">🇬🇧</span>}
+              {l === "es" && <span class="text-base">🇪🇸</span>}
+              {localeLabels[l]}
+            </a>
+          ))}
+        </div>
+      </div>
+    </nav>
+
+    <!-- Bouton hamburger mobile -->
+    <button
+      id="menu-toggle"
+      class="md:hidden p-2 text-primary"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg id="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden">
+        <path d="M6 6l12 12M6 18L18 6" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Menu mobile -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+    <nav aria-label="Navigation mobile" class="mx-auto max-w-7xl px-4 py-4 flex flex-col gap-3">
+      {nav.map(({ href, label }) => (
+        <a href={href} class="text-base font-medium text-gray-700 hover:text-primary py-2">
+          {label}
+        </a>
+      ))}
+      <a
+        href={localePath(locale, "/contact")}
+        class="inline-flex items-center justify-center rounded-md bg-accent px-5 py-3 text-sm font-semibold text-white"
+      >
+        {tr.nav.cta}
+      </a>
+      <!-- Langues mobile -->
+      <div class="flex flex-wrap gap-2 pt-2 border-t border-gray-100">
+        {locales.map((l) => (
+          <a
+            href={localePath(l, currentPath)}
+            class={`px-3 py-1.5 rounded-md text-sm border transition-colors ${
+              l === locale
+                ? "bg-primary text-white border-primary"
+                : "border-gray-200 text-gray-600 hover:border-primary hover:text-primary"
+            }`}
+          >
+            {localeLabels[l]}
+          </a>
+        ))}
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle")!;
+  const menu = document.getElementById("mobile-menu")!;
+  const iconOpen = document.getElementById("icon-open")!;
+  const iconClose = document.getElementById("icon-close")!;
+
+  toggle.addEventListener("click", () => {
+    const isOpen = !menu.classList.contains("hidden");
+    menu.classList.toggle("hidden", isOpen);
+    iconOpen.classList.toggle("hidden", !isOpen);
+    iconClose.classList.toggle("hidden", isOpen);
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+  });
+</script>
