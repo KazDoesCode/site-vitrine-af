@@ -37,7 +37,7 @@ const tr = t(locale);
         <li><a href={`tel:${contact.phone}`} class="hover:text-white">{contact.phoneDisplay}</a></li>
         <li><a href={`mailto:${contact.email}`} class="hover:text-white">{contact.email}</a></li>
         {agencies.map((a) => (
-          <li>{a.city} — {a.address}</li>
+          <li>{a.address}</li>
         ))}
       </ul>
     </div>
