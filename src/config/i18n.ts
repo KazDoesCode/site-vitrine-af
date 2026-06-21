@@ -6,6 +6,7 @@ export type Translations = {
     services: string;
     about: string;
     contact: string;
+    appointment: string;
     cta: string;
   };
   hero: {
@@ -66,6 +67,7 @@ export type Translations = {
     description: string;
     formTitle: string;
     fields: {
+      firstName: string;
       name: string;
       email: string;
       phone: string;
@@ -83,12 +85,25 @@ export type Translations = {
     mapsTitle: string;
     optional: string;
     required: string;
+    gdpr: string;
     errors: {
       nameTooShort: string;
+      firstNameTooShort: string;
       emailInvalid: string;
       subjectTooShort: string;
       messageTooShort: string;
     };
+  };
+  appointmentPage: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    calendarTitle: string;
+    calendarSubtitle: string;
+    whatsappCta: string;
+    phoneCta: string;
+    emailCta: string;
+    orTitle: string;
   };
   footer: {
     nav: string;
@@ -108,6 +123,7 @@ export const translations: Record<Locale, Translations> = {
       services: "Nos services",
       about: "À propos",
       contact: "Contact",
+      appointment: "Prendre rendez-vous",
       cta: "Prendre rendez-vous",
     },
     hero: {
@@ -168,8 +184,8 @@ export const translations: Record<Locale, Translations> = {
       title: "Parlons de votre situation",
       description: "Nous vous répondons sous 24h ouvrées. Premier échange confidentiel et sans engagement.",
       formTitle: "Formulaire de contact",
-      fields: { name: "Nom complet", email: "E-mail", phone: "Téléphone", subject: "Objet", message: "Message" },
-      submit: "Envoyer ma demande",
+      fields: { firstName: "Prénom", name: "Nom", email: "E-mail", phone: "Téléphone", subject: "Objet", message: "Message" },
+      submit: "Envoyer",
       sending: "Envoi en cours…",
       success: "Merci, votre message a bien été envoyé. Nous revenons vers vous sous 24h ouvrées.",
       error: "Une erreur est survenue. Merci de réessayer ou de nous appeler directement.",
@@ -180,8 +196,10 @@ export const translations: Record<Locale, Translations> = {
       mapsTitle: "Nous trouver",
       optional: "(facultatif)",
       required: "*",
+      gdpr: "Les informations recueillies sont utilisées uniquement pour traiter votre demande et vous recontacter. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en écrivant à contact@accueilformalites.fr.",
       errors: {
         nameTooShort: "Nom trop court",
+        firstNameTooShort: "Prénom trop court",
         emailInvalid: "E-mail invalide",
         subjectTooShort: "Objet trop court",
         messageTooShort: "Message trop court",
@@ -196,6 +214,17 @@ export const translations: Record<Locale, Translations> = {
       rights: "Tous droits réservés.",
     },
     whatsapp: "Bonjour, je souhaite des informations sur vos services.",
+    appointmentPage: {
+      eyebrow: "Rendez-vous",
+      title: "Prenez rendez-vous en ligne",
+      description: "Choisissez un créneau disponible directement dans notre agenda Google Calendar. Premier échange confidentiel et sans engagement.",
+      calendarTitle: "Sélectionnez un créneau",
+      calendarSubtitle: "Le calendrier ci-dessous affiche nos disponibilités en temps réel.",
+      whatsappCta: "Nous contacter via WhatsApp",
+      phoneCta: "Nous appeler",
+      emailCta: "Nous écrire",
+      orTitle: "Ou contactez-nous directement",
+    },
   },
 
   en: {
@@ -204,6 +233,7 @@ export const translations: Record<Locale, Translations> = {
       services: "Our services",
       about: "About",
       contact: "Contact",
+      appointment: "Book an appointment",
       cta: "Book an appointment",
     },
     hero: {
@@ -262,8 +292,8 @@ export const translations: Record<Locale, Translations> = {
       title: "Let's talk about your situation",
       description: "We reply within 24 business hours. First consultation is confidential and free of charge.",
       formTitle: "Contact form",
-      fields: { name: "Full name", email: "Email", phone: "Phone", subject: "Subject", message: "Message" },
-      submit: "Send my request",
+      fields: { firstName: "First name", name: "Last name", email: "Email", phone: "Phone", subject: "Subject", message: "Message" },
+      submit: "Send",
       sending: "Sending…",
       success: "Thank you, your message has been sent. We will get back to you within 24 business hours.",
       error: "An error occurred. Please try again or call us directly.",
@@ -274,8 +304,10 @@ export const translations: Record<Locale, Translations> = {
       mapsTitle: "Find us",
       optional: "(optional)",
       required: "*",
+      gdpr: "The information collected is used solely to process your request and contact you. In accordance with the GDPR, you have the right to access, rectify and delete your data by writing to contact@accueilformalites.fr.",
       errors: {
-        nameTooShort: "Name too short",
+        nameTooShort: "Last name too short",
+        firstNameTooShort: "First name too short",
         emailInvalid: "Invalid email",
         subjectTooShort: "Subject too short",
         messageTooShort: "Message too short",
@@ -290,6 +322,17 @@ export const translations: Record<Locale, Translations> = {
       rights: "All rights reserved.",
     },
     whatsapp: "Hello, I would like information about your services.",
+    appointmentPage: {
+      eyebrow: "Appointment",
+      title: "Book an appointment online",
+      description: "Choose an available slot directly in our Google Calendar. First consultation is confidential and free of charge.",
+      calendarTitle: "Select a time slot",
+      calendarSubtitle: "The calendar below shows our real-time availability.",
+      whatsappCta: "Contact us via WhatsApp",
+      phoneCta: "Call us",
+      emailCta: "Email us",
+      orTitle: "Or contact us directly",
+    },
   },
 
   es: {
@@ -298,6 +341,7 @@ export const translations: Record<Locale, Translations> = {
       services: "Nuestros servicios",
       about: "Quiénes somos",
       contact: "Contacto",
+      appointment: "Pedir cita",
       cta: "Pedir cita",
     },
     hero: {
@@ -356,8 +400,8 @@ export const translations: Record<Locale, Translations> = {
       title: "Hablemos de su situación",
       description: "Le respondemos en 24 horas hábiles. Primera consulta confidencial y sin compromiso.",
       formTitle: "Formulario de contacto",
-      fields: { name: "Nombre completo", email: "Correo electrónico", phone: "Teléfono", subject: "Asunto", message: "Mensaje" },
-      submit: "Enviar mi solicitud",
+      fields: { firstName: "Nombre", name: "Apellido", email: "Correo electrónico", phone: "Teléfono", subject: "Asunto", message: "Mensaje" },
+      submit: "Enviar",
       sending: "Enviando…",
       success: "Gracias, su mensaje ha sido enviado. Le responderemos en 24 horas hábiles.",
       error: "Se ha producido un error. Por favor, inténtelo de nuevo o llámenos.",
@@ -368,8 +412,10 @@ export const translations: Record<Locale, Translations> = {
       mapsTitle: "Encuéntrenos",
       optional: "(opcional)",
       required: "*",
+      gdpr: "La información recopilada se utiliza únicamente para procesar su solicitud y ponernos en contacto con usted. De conformidad con el RGPD, tiene derecho a acceder, rectificar y suprimir sus datos escribiendo a contact@accueilformalites.fr.",
       errors: {
-        nameTooShort: "Nombre demasiado corto",
+        nameTooShort: "Apellido demasiado corto",
+        firstNameTooShort: "Nombre demasiado corto",
         emailInvalid: "Correo inválido",
         subjectTooShort: "Asunto demasiado corto",
         messageTooShort: "Mensaje demasiado corto",
@@ -384,6 +430,17 @@ export const translations: Record<Locale, Translations> = {
       rights: "Todos los derechos reservados.",
     },
     whatsapp: "Hola, me gustaría obtener información sobre sus servicios.",
+    appointmentPage: {
+      eyebrow: "Cita",
+      title: "Reserve una cita en línea",
+      description: "Elija un horario disponible directamente en nuestro Google Calendar. Primera consulta confidencial y sin compromiso.",
+      calendarTitle: "Seleccione un horario",
+      calendarSubtitle: "El calendario muestra nuestra disponibilidad en tiempo real.",
+      whatsappCta: "Contáctanos por WhatsApp",
+      phoneCta: "Llamarnos",
+      emailCta: "Escribirnos",
+      orTitle: "O contáctenos directamente",
+    },
   },
 
   ar: {
@@ -392,6 +449,7 @@ export const translations: Record<Locale, Translations> = {
       services: "خدماتنا",
       about: "من نحن",
       contact: "اتصل بنا",
+      appointment: "حجز موعد",
       cta: "حجز موعد",
     },
     hero: {
@@ -449,8 +507,8 @@ export const translations: Record<Locale, Translations> = {
       title: "تحدثوا معنا عن وضعكم",
       description: "نردّ خلال 24 ساعة عمل. أول تشاور سري وبدون التزام.",
       formTitle: "نموذج الاتصال",
-      fields: { name: "الاسم الكامل", email: "البريد الإلكتروني", phone: "الهاتف", subject: "الموضوع", message: "الرسالة" },
-      submit: "إرسال طلبي",
+      fields: { firstName: "الاسم الأول", name: "اللقب", email: "البريد الإلكتروني", phone: "الهاتف", subject: "الموضوع", message: "الرسالة" },
+      submit: "إرسال",
       sending: "جارٍ الإرسال…",
       success: "شكراً، تم إرسال رسالتكم. سنردّ عليكم خلال 24 ساعة عمل.",
       error: "حدث خطأ. يرجى المحاولة مجدداً أو الاتصال بنا مباشرة.",
@@ -461,8 +519,10 @@ export const translations: Record<Locale, Translations> = {
       mapsTitle: "جدونا",
       optional: "(اختياري)",
       required: "*",
+      gdpr: "تُستخدم المعلومات المجمّعة فقط لمعالجة طلبكم والتواصل معكم. وفقاً للائحة RGPD، يحق لكم الوصول إلى بياناتكم وتصحيحها وحذفها بالكتابة إلى contact@accueilformalites.fr.",
       errors: {
-        nameTooShort: "الاسم قصير جداً",
+        nameTooShort: "اللقب قصير جداً",
+        firstNameTooShort: "الاسم الأول قصير جداً",
         emailInvalid: "بريد إلكتروني غير صالح",
         subjectTooShort: "الموضوع قصير جداً",
         messageTooShort: "الرسالة قصيرة جداً",
@@ -477,6 +537,17 @@ export const translations: Record<Locale, Translations> = {
       rights: "جميع الحقوق محفوظة.",
     },
     whatsapp: "مرحباً، أودّ الحصول على معلومات حول خدماتكم.",
+    appointmentPage: {
+      eyebrow: "موعد",
+      title: "احجز موعدك عبر الإنترنت",
+      description: "اختر موعداً متاحاً مباشرةً في تقويم Google Calendar الخاص بنا. أول تشاور سري وبدون التزام.",
+      calendarTitle: "اختر موعداً",
+      calendarSubtitle: "يعرض التقويم أدناه التوافر الفوري.",
+      whatsappCta: "تواصل معنا عبر واتساب",
+      phoneCta: "اتصل بنا",
+      emailCta: "راسلنا",
+      orTitle: "أو تواصل معنا مباشرة",
+    },
   },
 };
 

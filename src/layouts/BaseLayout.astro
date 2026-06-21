@@ -60,13 +60,11 @@ const lang = locale;
     <meta name="theme-color" content="#1e3a5f" />
     <link rel="icon" href="/images/logo2.png" type="image/png" />
 
-    <!-- Polices -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-    />
+    <!-- Marianne auto-hébergée : preload des graisses critiques pour éviter le FOUT -->
+    <link rel="preload" href="/fonts/Marianne-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Marianne-Medium.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Marianne-Bold.woff2" as="font" type="font/woff2" crossorigin />
+
   </head>
   <body class="flex min-h-screen flex-col">
     <!-- Lien d'évitement RGAA 1.1 / WCAG 2.4.1 -->

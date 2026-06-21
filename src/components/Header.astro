@@ -11,6 +11,14 @@ const tr = t(locale);
 
 const currentPath = Astro.url.pathname.replace(/^\/(en|es|ar)/, "") || "/";
 
+const appointmentSlug: Record<string, string> = {
+  fr: "/rendez-vous",
+  en: "/appointment",
+  es: "/cita",
+  ar: "/maweid",
+};
+const appointmentHref = localePath(locale, appointmentSlug[locale] ?? "/rendez-vous");
+
 const nav = [
   { href: localePath(locale, "/"), label: tr.nav.home },
   { href: localePath(locale, "/services"), label: tr.nav.services },
@@ -23,13 +31,13 @@ const current = Astro.url.pathname;
 
 <header class="sticky top-0 z-40 bg-white border-b border-gray-200">
   <div class="tricolor-bar"></div>
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between h-20 gap-4">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between h-24 gap-4">
 
     <!-- Logo -->
     <a href={localePath(locale, "/")} class="flex items-center gap-3 shrink-0">
-      <img src={images.logo} alt={`${company.name} — logo`} class="h-14 w-auto" width="56" height="56" />
+      <img src={images.logo} alt={`${company.name} — logo`} class="h-24 w-auto" width="96" height="96" />
       <div class="hidden sm:block">
-        <span class="font-serif text-lg text-primary block leading-tight">{company.name}</span>
+        <span class="font-serif font-bold text-xl text-primary block leading-tight">{company.name}</span>
       </div>
     </a>
 
@@ -46,7 +54,7 @@ const current = Astro.url.pathname;
         </a>
       ))}
       <a
-        href={localePath(locale, "/contact")}
+        href={appointmentHref}
         class="inline-flex items-center justify-center rounded-md bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-accent-dark hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
       >
         {tr.nav.cta}
@@ -110,7 +118,7 @@ const current = Astro.url.pathname;
         </a>
       ))}
       <a
-        href={localePath(locale, "/contact")}
+        href={appointmentHref}
         class="inline-flex items-center justify-center rounded-md bg-accent px-5 py-3 text-sm font-semibold text-white"
       >
         {tr.nav.cta}

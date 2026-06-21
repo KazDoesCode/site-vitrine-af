@@ -121,6 +121,14 @@ export const stats = [
   { label: "Satisfaction", value: "98%" },
 ];
 
+/**
+ * URL de l'iframe Google Calendar Appointment Scheduling.
+ * Aller sur calendar.google.com → Créer → "Rendez-vous" → "Ouvrir la page de réservation" → copier l'URL.
+ * Exemple : "https://calendar.google.com/calendar/appointments/schedules/XXXXXXXX"
+ */
+export const googleCalendarAppointmentUrl =
+  "https://calendar.app.google/oq55n3dpgD1Y4D2K8";
+
 /** URL de production — mettre à jour avant déploiement */
 export const siteUrl = "https://www.accueilformalites.fr";
 
