@@ -140,14 +140,14 @@ export const translations: Record<Locale, Translations> = {
       title: "Un cabinet au service des étrangers en France",
       description:
         "Depuis plus de dix ans, nous accompagnons les particuliers et les familles dans la régularisation et le suivi de leur situation administrative. Nous maîtrisons les procédures préfectorales et défendons chaque dossier avec rigueur.",
-      link: "En savoir plus →",
+      link: "En savoir plus",
     },
     services: {
       eyebrow: "Nos expertises",
       title: "Des services adaptés à chaque situation",
       description:
         "Que vous soyez salarié, étudiant, conjoint de Français ou demandeur de naturalisation, nous prenons en charge votre dossier de bout en bout.",
-      learnMore: "En savoir plus →",
+      learnMore: "En savoir plus",
     },
     values: { eyebrow: "Nos engagements", title: "Quatre valeurs qui guident notre cabinet" },
     cta: {
@@ -257,7 +257,7 @@ export const translations: Record<Locale, Translations> = {
       title: "Services tailored to every situation",
       description:
         "Whether you are an employee, student, spouse of a French citizen or applying for naturalisation, we handle your file from start to finish.",
-      learnMore: "Learn more →",
+      learnMore: "Learn more",
     },
     values: { eyebrow: "Our commitments", title: "Four values that guide our firm" },
     cta: {
@@ -365,7 +365,7 @@ export const translations: Record<Locale, Translations> = {
       title: "Servicios adaptados a cada situación",
       description:
         "Tanto si es trabajador, estudiante, cónyuge de un ciudadano francés o solicitante de naturalización, nos encargamos de su expediente de principio a fin.",
-      learnMore: "Saber más →",
+      learnMore: "Saber más",
     },
     values: { eyebrow: "Nuestros compromisos", title: "Cuatro valores que guían nuestro despacho" },
     cta: {
@@ -473,7 +473,7 @@ export const translations: Record<Locale, Translations> = {
       title: "خدمات مكيّفة لكل وضع",
       description:
         "سواء كنت موظفاً أو طالباً أو زوجاً لمواطن فرنسي أو طالب تجنيس، نتولى ملفك من الألف إلى الياء.",
-      learnMore: "اعرف أكثر ←",
+      learnMore: "اعرف أكثر",
     },
     values: { eyebrow: "التزاماتنا", title: "أربع قيم توجّه مكتبنا" },
     cta: {
