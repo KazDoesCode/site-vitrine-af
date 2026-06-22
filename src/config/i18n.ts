@@ -143,7 +143,7 @@ export const translations: Record<Locale, Translations> = {
       eyebrow: "Qui sommes-nous",
       title: "Un cabinet au service des étrangers en France",
       description:
-        "Depuis plus de dix ans, nous accompagnons les particuliers et les familles dans la régularisation et le suivi de leur situation administrative. Nous maîtrisons les procédures préfectorales et défendons chaque dossier avec rigueur.",
+        "Accueil Formalités vous accompagne dans l'ensemble de vos démarches : visas, réunification familiale, demande d'asile, DALO, logement, retraite et CAF. Nous nous appuyons sur tout un réseau de professionnels au service de nos clients et traitons chaque dossier partout en France avec la même rigueur, en nous déplaçant lorsque la situation l'exige.",
       link: "En savoir plus",
     },
     services: {
@@ -181,12 +181,12 @@ export const translations: Record<Locale, Translations> = {
       eyebrow: "Notre cabinet",
       title: "Une expertise reconnue au service des étrangers en France",
       description:
-        "Depuis plus de dix ans, nous accompagnons les particuliers, les familles et les entreprises dans toutes leurs démarches administratives en France. Notre approche : la précision, la pédagogie et la disponibilité.",
+        "Accueil Formalités vous accompagne dans l'ensemble de vos démarches : visas, réunification familiale, demande d'asile, DALO, logement, retraite et CAF. Nous nous appuyons sur tout un réseau de professionnels au service de nos clients et traitons chaque dossier partout en France avec la même rigueur, en nous déplaçant lorsque la situation l'exige.",
       expertiseTitle: "Notre expertise",
       expertiseP1:
         "Nous connaissons les exigences des préfectures, des consulats, de l'OFII et des services de la DREETS. Cette maîtrise du terrain nous permet d'anticiper les difficultés, de constituer des dossiers solides et de réduire les délais de traitement.",
       expertiseP2:
-        "Nous intervenons aussi bien sur les premières demandes que sur les renouvellements, les recours et les situations complexes (refus, OQTF, régularisation).",
+        "Nous intervenons aussi bien sur les premières demandes que sur les renouvellements, les recours et les situations complexes (refus, OQTF, régularisation). Nous traitons les dossiers dans toute la France avec la même rigueur, et nous nous déplaçons chaque fois que cela est nécessaire.",
       valuesEyebrow: "Nos valeurs",
       valuesTitle: "Quatre engagements forts",
       cta: "Prendre rendez-vous",
@@ -264,7 +264,7 @@ export const translations: Record<Locale, Translations> = {
       eyebrow: "Who we are",
       title: "A firm dedicated to foreigners in France",
       description:
-        "For over ten years, we have been supporting individuals and families in regularising and managing their administrative status in France. We master prefectural procedures and fight for every file.",
+        "Accueil Formalités supports you with all your procedures: visas, family reunification, asylum applications, DALO, housing, retirement and CAF. We draw on a whole network of professionals at our clients' service and handle every file across France with the same rigour, travelling whenever the situation requires.",
       link: "Learn more",
     },
     services: {
@@ -300,12 +300,12 @@ export const translations: Record<Locale, Translations> = {
       eyebrow: "Our firm",
       title: "Recognised expertise at the service of foreigners in France",
       description:
-        "For over ten years, we have been supporting individuals, families and businesses with all their administrative procedures in France. Our approach: precision, pedagogy and availability.",
+        "Accueil Formalités supports you with all your procedures: visas, family reunification, asylum applications, DALO, housing, retirement and CAF. We draw on a whole network of professionals at our clients' service and handle every file across France with the same rigour, travelling whenever the situation requires.",
       expertiseTitle: "Our expertise",
       expertiseP1:
         "We know the requirements of préfectures, consulates, OFII and DREETS. This field knowledge allows us to anticipate difficulties, build solid files and reduce processing times.",
       expertiseP2:
-        "We handle first-time applications as well as renewals, appeals and complex situations (refusals, OQTF, regularisation).",
+        "We handle first-time applications as well as renewals, appeals and complex situations (refusals, OQTF, regularisation). We process files across all of France with the same rigour, and travel whenever necessary.",
       valuesEyebrow: "Our values",
       valuesTitle: "Four strong commitments",
       cta: "Book an appointment",
@@ -383,7 +383,7 @@ export const translations: Record<Locale, Translations> = {
       eyebrow: "Quiénes somos",
       title: "Un despacho al servicio de los extranjeros en Francia",
       description:
-        "Desde hace más de diez años, acompañamos a particulares y familias en la regularización y seguimiento de su situación administrativa en Francia. Dominamos los procedimientos prefectorales y defendemos cada expediente con rigor.",
+        "Accueil Formalités le acompaña en todos sus trámites: visados, reagrupación familiar, solicitud de asilo, DALO, vivienda, jubilación y CAF. Nos apoyamos en toda una red de profesionales al servicio de nuestros clientes y gestionamos cada expediente en toda Francia con el mismo rigor, desplazándonos cuando la situación lo requiere.",
       link: "Saber más",
     },
     services: {
@@ -419,12 +419,12 @@ export const translations: Record<Locale, Translations> = {
       eyebrow: "Nuestro despacho",
       title: "Una experiencia reconocida al servicio de los extranjeros en Francia",
       description:
-        "Desde hace más de diez años, acompañamos a particulares, familias y empresas en todos sus trámites administrativos en Francia. Nuestra filosofía: precisión, pedagogía y disponibilidad.",
+        "Accueil Formalités le acompaña en todos sus trámites: visados, reagrupación familiar, solicitud de asilo, DALO, vivienda, jubilación y CAF. Nos apoyamos en toda una red de profesionales al servicio de nuestros clientes y gestionamos cada expediente en toda Francia con el mismo rigor, desplazándonos cuando la situación lo requiere.",
       expertiseTitle: "Nuestra experiencia",
       expertiseP1:
         "Conocemos los requisitos de las prefecturas, consulados, OFII y DREETS. Este conocimiento del terreno nos permite anticipar dificultades y reducir los plazos de tramitación.",
       expertiseP2:
-        "Intervenimos tanto en primeras solicitudes como en renovaciones, recursos y situaciones complejas (denegaciones, OQTF, regularización).",
+        "Intervenimos tanto en primeras solicitudes como en renovaciones, recursos y situaciones complejas (denegaciones, OQTF, regularización). Gestionamos expedientes en toda Francia con el mismo rigor, y nos desplazamos siempre que sea necesario.",
       valuesEyebrow: "Nuestros valores",
       valuesTitle: "Cuatro compromisos fuertes",
       cta: "Pedir cita",
@@ -502,7 +502,7 @@ export const translations: Record<Locale, Translations> = {
       eyebrow: "من نحن",
       title: "مكتب في خدمة الأجانب في فرنسا",
       description:
-        "منذ أكثر من عشر سنوات، نرافق الأفراد والعائلات في تسوية وضعهم الإداري. نُتقن الإجراءات المحلية وندافع عن كل ملف بجدية.",
+        "تُرافقكم Accueil Formalités في جميع إجراءاتكم: التأشيرات، لمّ شمل الأسرة، طلب اللجوء، DALO، السكن، التقاعد والـ CAF. نعتمد على شبكة واسعة من المحترفين في خدمة عملائنا ونعالج كل ملف في جميع أنحاء فرنسا بنفس الصرامة، مع التنقل كلما اقتضت الحاجة.",
       link: "اعرف أكثر",
     },
     services: {
@@ -537,12 +537,12 @@ export const translations: Record<Locale, Translations> = {
     aboutPage: {
       eyebrow: "مكتبنا",
       title: "خبرة معترف بها في خدمة الأجانب في فرنسا",
-      description: "منذ أكثر من عشر سنوات، نرافق الأفراد والعائلات والشركات في جميع إجراءاتهم الإدارية.",
+      description: "تُرافقكم Accueil Formalités في جميع إجراءاتكم: التأشيرات، لمّ شمل الأسرة، طلب اللجوء، DALO، السكن، التقاعد والـ CAF. نعتمد على شبكة واسعة من المحترفين في خدمة عملائنا ونعالج كل ملف في جميع أنحاء فرنسا بنفس الصرامة، مع التنقل كلما اقتضت الحاجة.",
       expertiseTitle: "خبرتنا",
       expertiseP1:
         "يعرف مستشارونا متطلبات المحافظات والقنصليات ومكتب الهجرة والاندماج (OFII) ومديرية العمل (DREETS). تتيح لنا هذه المعرفة الميدانية توقع الصعوبات وبناء ملفات متينة وتقليص آجال المعالجة.",
       expertiseP2:
-        "نتدخل في الطلبات الأولى كما في التجديدات والطعون والحالات المعقدة (الرفض، OQTF، التسوية).",
+        "نتدخل في الطلبات الأولى كما في التجديدات والطعون والحالات المعقدة (الرفض، OQTF، التسوية). نعالج الملفات في جميع أنحاء فرنسا بنفس الصرامة، وننتقل كلما كان ذلك ضرورياً.",
       valuesEyebrow: "قيمنا",
       valuesTitle: "أربعة التزامات قوية",
       cta: "حجز موعد",
