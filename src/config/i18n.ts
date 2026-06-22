@@ -101,6 +101,9 @@ export type Translations = {
     description: string;
     calendarTitle: string;
     calendarSubtitle: string;
+    calendarIntro: string;
+    calendarButton: string;
+    calendarNote: string;
     whatsappCta: string;
     phoneCta: string;
     emailCta: string;
@@ -229,6 +232,9 @@ export const translations: Record<Locale, Translations> = {
       description: "Choisissez un créneau disponible directement dans notre agenda Google Calendar. Premier échange confidentiel et sans engagement.",
       calendarTitle: "Sélectionnez un créneau",
       calendarSubtitle: "Le calendrier ci-dessous affiche nos disponibilités en temps réel.",
+      calendarIntro: "Cliquez sur le bouton ci-dessous pour accéder à notre agenda en ligne et choisir le créneau qui vous convient.",
+      calendarButton: "Choisir mon créneau",
+      calendarNote: "S'ouvre dans un nouvel onglet · Google Calendar",
       whatsappCta: "Nous contacter via WhatsApp",
       phoneCta: "Nous appeler",
       emailCta: "Nous écrire",
@@ -259,7 +265,7 @@ export const translations: Record<Locale, Translations> = {
       title: "A firm dedicated to foreigners in France",
       description:
         "For over ten years, we have been supporting individuals and families in regularising and managing their administrative status in France. We master prefectural procedures and fight for every file.",
-      link: "Learn more →",
+      link: "Learn more",
     },
     services: {
       eyebrow: "Our expertise",
@@ -345,6 +351,9 @@ export const translations: Record<Locale, Translations> = {
       description: "Choose an available slot directly in our Google Calendar. First consultation is confidential and free of charge.",
       calendarTitle: "Select a time slot",
       calendarSubtitle: "The calendar below shows our real-time availability.",
+      calendarIntro: "Click the button below to access our online calendar and choose a time that works for you.",
+      calendarButton: "Choose my time slot",
+      calendarNote: "Opens in a new tab · Google Calendar",
       whatsappCta: "Contact us via WhatsApp",
       phoneCta: "Call us",
       emailCta: "Email us",
@@ -375,7 +384,7 @@ export const translations: Record<Locale, Translations> = {
       title: "Un despacho al servicio de los extranjeros en Francia",
       description:
         "Desde hace más de diez años, acompañamos a particulares y familias en la regularización y seguimiento de su situación administrativa en Francia. Dominamos los procedimientos prefectorales y defendemos cada expediente con rigor.",
-      link: "Saber más →",
+      link: "Saber más",
     },
     services: {
       eyebrow: "Nuestra experiencia",
@@ -461,6 +470,9 @@ export const translations: Record<Locale, Translations> = {
       description: "Elija un horario disponible directamente en nuestro Google Calendar. Primera consulta confidencial y sin compromiso.",
       calendarTitle: "Seleccione un horario",
       calendarSubtitle: "El calendario muestra nuestra disponibilidad en tiempo real.",
+      calendarIntro: "Haga clic en el botón siguiente para acceder a nuestra agenda en línea y elegir el horario que más le convenga.",
+      calendarButton: "Elegir mi horario",
+      calendarNote: "Se abre en una nueva pestaña · Google Calendar",
       whatsappCta: "Contáctanos por WhatsApp",
       phoneCta: "Llamarnos",
       emailCta: "Escribirnos",
@@ -491,7 +503,7 @@ export const translations: Record<Locale, Translations> = {
       title: "مكتب في خدمة الأجانب في فرنسا",
       description:
         "منذ أكثر من عشر سنوات، نرافق الأفراد والعائلات في تسوية وضعهم الإداري. نُتقن الإجراءات المحلية وندافع عن كل ملف بجدية.",
-      link: "اعرف أكثر ←",
+      link: "اعرف أكثر",
     },
     services: {
       eyebrow: "خبرتنا",
@@ -576,6 +588,9 @@ export const translations: Record<Locale, Translations> = {
       description: "اختر موعداً متاحاً مباشرةً في تقويم Google Calendar الخاص بنا. أول تشاور سري وبدون التزام.",
       calendarTitle: "اختر موعداً",
       calendarSubtitle: "يعرض التقويم أدناه التوافر الفوري.",
+      calendarIntro: "انقر على الزر أدناه للوصول إلى أجندتنا الإلكترونية واختيار الموعد المناسب لك.",
+      calendarButton: "اختر موعدي",
+      calendarNote: "يُفتح في علامة تبويب جديدة · Google Calendar",
       whatsappCta: "تواصل معنا عبر واتساب",
       phoneCta: "اتصل بنا",
       emailCta: "راسلنا",

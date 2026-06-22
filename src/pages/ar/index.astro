@@ -51,6 +51,7 @@ const tr = t(locale);
         <p class="mt-5 text-base text-gray-600 leading-relaxed">{tr.about.description}</p>
         <a href="/ar/a-propos" class="group inline-flex items-center gap-2 mt-7 text-primary font-semibold hover:text-accent transition-colors">
           {tr.about.link}
+          <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </div>
     </div>
@@ -64,20 +65,23 @@ const tr = t(locale);
         <p class="mt-4 text-base text-gray-600 leading-relaxed">{tr.services.description}</p>
       </div>
       <div class="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((s) => (
+        {services.map((s, idx) => {
+          const sl = tr.servicesPage.servicesList[idx];
+          return (
           <article class="card-service">
             <div class="overflow-hidden">
-              <img src={s.image} alt={s.title} class="h-48 w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" width="1000" height="700" />
+              <img src={s.image} alt={sl.title} class="h-48 w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" width="1000" height="700" />
             </div>
             <div class="p-6 flex flex-col flex-1">
-              <h3 class="font-serif text-xl text-primary">{s.title}</h3>
-              <p class="mt-3 text-sm text-gray-600 leading-relaxed flex-1">{s.summary}</p>
+              <h3 class="font-serif text-xl text-primary">{sl.title}</h3>
+              <p class="mt-3 text-sm text-gray-600 leading-relaxed flex-1">{sl.summary}</p>
               <a href={`/ar/services#${s.slug}`} class="mt-5 text-sm font-semibold text-accent hover:text-accent-dark transition-colors">
                 {tr.services.learnMore}
               </a>
             </div>
           </article>
-        ))}
+          );
+        })}
       </div>
     </div>
   </section>

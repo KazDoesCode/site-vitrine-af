@@ -28,9 +28,9 @@ const tr = t(locale);
           </a>
         </div>
         <dl class="mt-12 grid grid-cols-3 gap-6 max-w-md border-t border-gray-200 pt-6">
-          {stats.map(({ label, value }) => (
+          {stats.map(({ value }, i) => (
             <div>
-              <dt class="text-xs uppercase tracking-wider text-gray-500">{label}</dt>
+              <dt class="text-xs uppercase tracking-wider text-gray-500">{[tr.stats.experience, tr.stats.cases, tr.stats.satisfaction][i]}</dt>
               <dd class="font-serif text-2xl sm:text-3xl text-primary mt-1">{value}</dd>
             </div>
           ))}
