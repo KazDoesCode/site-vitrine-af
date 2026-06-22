@@ -53,10 +53,10 @@ export const agencies = [
 
 export const services = [
   {
-    slug: "titre-de-sejour",
-    title: "Titre de séjour",
+    slug: "titre-de-sejour-et-visa",
+    title: "Titre de séjour & Visa",
     summary:
-      "Constitution complète et suivi de votre demande de titre de séjour, de la prise de rendez-vous en préfecture à la remise du titre.",
+      "Constitution complète et suivi de votre demande de titre de séjour ou de visa long séjour, de la prise de rendez-vous en préfecture à la remise du titre.",
     image: images.services.titreSejour,
   },
   {
@@ -81,17 +81,17 @@ export const services = [
     image: images.services.naturalisation,
   },
   {
-    slug: "regroupement-familial",
-    title: "Regroupement familial",
+    slug: "reunification-familiale-et-asile",
+    title: "Réunification familiale & Demande d'asile",
     summary:
-      "Procédure complète de regroupement familial : conditions, dépôt OFII et suivi du dossier jusqu'à l'arrivée des proches.",
+      "Procédure complète de réunification familiale (OFII) et accompagnement dans les démarches de demande d'asile auprès de l'OFPRA et de la CNDA.",
     image: images.services.famille,
   },
   {
-    slug: "accompagnement",
-    title: "Accompagnement personnalisé",
+    slug: "accompagnement-administratif",
+    title: "Accompagnement administratif",
     summary:
-      "Conseil sur-mesure, rédaction de courriers, recours gracieux et hiérarchiques, suivi de vos démarches au quotidien.",
+      "DALO, logement social, retraite, CAF : nous vous accompagnons dans toutes vos démarches administratives du quotidien, avec conseil sur-mesure et rédaction de courriers.",
     image: images.services.accompagnement,
   },
 ] as const;

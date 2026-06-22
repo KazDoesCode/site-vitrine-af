@@ -169,12 +169,12 @@ export const translations: Record<Locale, Translations> = {
       bullets: ["Analyse approfondie de votre situation", "Préparation complète du dossier", "Suivi jusqu'à la décision finale"],
       cta: "Demander un rendez-vous",
       servicesList: [
-        { title: "Titre de séjour", summary: "Constitution complète et suivi de votre demande de titre de séjour, de la prise de rendez-vous en préfecture à la remise du titre." },
+        { title: "Titre de séjour & Visa", summary: "Constitution complète et suivi de votre demande de titre de séjour ou de visa long séjour, de la prise de rendez-vous en préfecture à la remise du titre." },
         { title: "Renouvellement de titre de séjour", summary: "Anticipation des délais, vérification des pièces et accompagnement jusqu'au renouvellement de votre titre." },
         { title: "Autorisation de travail", summary: "Montage du dossier employeur et démarches auprès de la DREETS pour l'obtention de votre autorisation de travail." },
         { title: "Naturalisation", summary: "Évaluation de votre éligibilité, préparation des justificatifs et accompagnement jusqu'au décret de naturalisation." },
-        { title: "Regroupement familial", summary: "Procédure complète de regroupement familial : conditions, dépôt OFII et suivi du dossier jusqu'à l'arrivée des proches." },
-        { title: "Accompagnement personnalisé", summary: "Conseil sur-mesure, rédaction de courriers, recours gracieux et hiérarchiques, suivi de vos démarches au quotidien." },
+        { title: "Réunification familiale & Demande d'asile", summary: "Procédure complète de réunification familiale (OFII) et accompagnement dans les démarches de demande d'asile auprès de l'OFPRA et de la CNDA." },
+        { title: "Accompagnement administratif", summary: "DALO, logement social, retraite, CAF : nous vous accompagnons dans toutes vos démarches administratives du quotidien, avec conseil sur-mesure et rédaction de courriers." },
       ],
     },
     aboutPage: {
@@ -288,12 +288,12 @@ export const translations: Record<Locale, Translations> = {
       bullets: ["In-depth analysis of your situation", "Complete file preparation", "Follow-up until the final decision"],
       cta: "Request an appointment",
       servicesList: [
-        { title: "Residence permit", summary: "Full preparation and follow-up of your residence permit application, from booking the prefecture appointment to receiving the permit." },
+        { title: "Residence permit & Visa", summary: "Full preparation and follow-up of your residence permit or long-stay visa application, from booking the prefecture appointment to receiving the permit." },
         { title: "Residence permit renewal", summary: "Anticipating deadlines, checking documents and guiding you through to the renewal of your permit." },
         { title: "Work authorisation", summary: "Preparing the employer file and handling procedures with DREETS to obtain your work authorisation." },
         { title: "Naturalisation", summary: "Assessing your eligibility, preparing supporting documents and guiding you through to the naturalisation decree." },
-        { title: "Family reunification", summary: "Full family reunification procedure: conditions, OFII submission and file follow-up until your relatives arrive." },
-        { title: "Personalised support", summary: "Tailored advice, letter writing, administrative appeals, and daily follow-up of your procedures." },
+        { title: "Family reunification & Asylum", summary: "Full family reunification procedure (OFII) and support with asylum applications before OFPRA and CNDA." },
+        { title: "Administrative support", summary: "DALO, social housing, retirement, CAF: we guide you through all your everyday administrative procedures, with tailored advice and letter writing." },
       ],
     },
     aboutPage: {
@@ -407,12 +407,12 @@ export const translations: Record<Locale, Translations> = {
       bullets: ["Análisis en profundidad de su situación", "Preparación completa del expediente", "Seguimiento hasta la decisión final"],
       cta: "Solicitar una cita",
       servicesList: [
-        { title: "Permiso de residencia", summary: "Preparación completa y seguimiento de su solicitud de permiso de residencia, desde la cita en la prefectura hasta la entrega del permiso." },
+        { title: "Permiso de residencia & Visado", summary: "Preparación completa y seguimiento de su solicitud de permiso de residencia o visado de larga duración, desde la cita en la prefectura hasta la entrega del permiso." },
         { title: "Renovación del permiso de residencia", summary: "Anticipación de plazos, verificación de documentos y acompañamiento hasta la renovación de su permiso." },
         { title: "Autorización de trabajo", summary: "Preparación del expediente del empleador y gestiones ante la DREETS para obtener su autorización de trabajo." },
         { title: "Naturalización", summary: "Evaluación de su elegibilidad, preparación de justificantes y acompañamiento hasta el decreto de naturalización." },
-        { title: "Reagrupación familiar", summary: "Procedimiento completo de reagrupación familiar: condiciones, presentación ante el OFII y seguimiento del expediente hasta la llegada de sus familiares." },
-        { title: "Acompañamiento personalizado", summary: "Asesoramiento a medida, redacción de escritos, recursos administrativos y seguimiento diario de sus trámites." },
+        { title: "Reagrupación familiar & Solicitud de asilo", summary: "Procedimiento completo de reagrupación familiar (OFII) y acompañamiento en las solicitudes de asilo ante el OFPRA y la CNDA." },
+        { title: "Acompañamiento administrativo", summary: "DALO, vivienda social, jubilación, CAF: le acompañamos en todos sus trámites administrativos cotidianos, con asesoramiento personalizado y redacción de escritos." },
       ],
     },
     aboutPage: {
@@ -526,12 +526,12 @@ export const translations: Record<Locale, Translations> = {
       bullets: ["تحليل معمّق لوضعكم", "إعداد كامل للملف", "متابعة حتى القرار النهائي"],
       cta: "طلب موعد",
       servicesList: [
-        { title: "تصريح الإقامة", summary: "إعداد كامل ومتابعة طلب تصريح الإقامة، من حجز الموعد في المحافظة حتى استلام التصريح." },
+        { title: "تصريح الإقامة والتأشيرة", summary: "إعداد كامل ومتابعة طلب تصريح الإقامة أو التأشيرة طويلة الأمد، من حجز الموعد في المحافظة حتى استلام التصريح." },
         { title: "تجديد تصريح الإقامة", summary: "استباق الآجال، التحقق من الوثائق والمرافقة حتى تجديد تصريحكم." },
         { title: "تصريح العمل", summary: "إعداد ملف صاحب العمل والإجراءات لدى مديرية العمل DREETS للحصول على تصريح العمل." },
         { title: "الجنسية الفرنسية", summary: "تقييم أهليتكم، تحضير المستندات الداعمة والمرافقة حتى مرسوم التجنيس." },
-        { title: "لمّ شمل الأسرة", summary: "إجراء كامل للمّ شمل الأسرة: الشروط، تقديم الطلب لدى OFII ومتابعة الملف حتى وصول ذويكم." },
-        { title: "المرافقة الشخصية", summary: "استشارة مخصصة، كتابة المراسلات، الطعون الإدارية ومتابعة يومية لإجراءاتكم." },
+        { title: "لمّ شمل الأسرة وطلب اللجوء", summary: "إجراء كامل للمّ شمل الأسرة (OFII) ومرافقة في طلبات اللجوء أمام OFPRA وCNDA." },
+        { title: "المرافقة الإدارية", summary: "DALO، السكن الاجتماعي، التقاعد، CAF: نرافقكم في جميع إجراءاتكم الإدارية اليومية، مع استشارة مخصصة وكتابة المراسلات." },
       ],
     },
     aboutPage: {
