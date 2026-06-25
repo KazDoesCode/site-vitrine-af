@@ -16,11 +16,11 @@ export const images = {
   about: "/images/1.jpg",
   services: {
     titreSejour: "/images/2.jpg",
-    renouvellement: "/images/service-renouvellement.jpg",
-    travail: "/images/service-travail.jpg",
-    naturalisation: "/images/passport.png",
-    famille: "/images/service-famille.jpg",
-    accompagnement: "/images/service-accompagnement.jpg",
+    renouvellement: "/images/renouvellement.jpg",
+    travail: "/images/job.jpg",
+    naturalisation: "/images/france.jpg",
+    famille: "/images/famille.jpg",
+    accompagnement: "/images/administation.jpg",
   },
 };
 
